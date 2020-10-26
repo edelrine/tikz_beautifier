@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <?php include("header.php"); ?>
+    <body>
+        <form method="post" action="converter.php">
+        <h1>
+            Tikz beautifier online :
+        </h1>
+
+        <?php 
+            function get_input($variableName, $choice, $default) {
+                return (isset($_POST[$variableName]) and in_array($_POST[$variableName], $choice)) ? $_POST[$variableName] : $default; 
+            }
+
+            $tf = array("true", "false");
+            $color =  get_input("color", $tf, "true");
+            $ident =  get_input("ident", array("\t",""," ","  ","   ","    "), "    ");
+            $round =  get_input("round", array("-1","0","1","2","3","4"), "2");
+            $sort = get_input("sort", $tf, "true");
+            $order = get_input("order", array("abscissa","ordinate"), "abscissa");
+            $absci_order = get_input("absci_order", array("ascending" ,"descending"), "ascending"); 
+            $ordi_order = get_input("ordi_order", array("ascending" ,"descending"), "ascending"); 
+            $by_type = get_input("by_type", $tf, "false"); 
+            $tikz = (isset($_POST["tikz"]) ? htmlspecialchars($_POST["tikz"]) : "");
+        ?>
+
+        <textarea name="tikz" placeholder="Yoru Tikz code here" autofocus required><?php echo $tikz ?></textarea>
+        <div id="contener_submit">
+            <input type="submit" value="Submit" class="button"/>
+            <input type="reset" value="Reset" class="button"/>
+        </div>
+
+
+        <?php 
+            if (isset($_POST["tikz"])) {
+                if(strlen($tikz) > 4000){
+                    echo '<h2 class="error"><br />Sorry your code is more than 4000 characters long, use the off-line version of our <a href="nortegithub">github</a>!</h2>';
+                }else{
+                    $start_time = microtime(true); 
+                    $tikz_file = fopen("./tikz_to_convert", "w+");
+                    fwrite($tikz_file, $tikz);
+                    fclose($tikz_file);
+                    $command = 'python3 python/main.py ./tikz_to_convert -hide -tab "'.($ident).'" -round "'.($round).'" ' ;
+                    $command = $command.($color=="true" ?'':'-no-color ').($sort=="true" ?'': '-no-sort ').($order=="abscissa" ?'': '-ordinate-last ');
+                    $command = $command.($absci_order=="ascending" ?'': '-decreasing-abscissa ').($ordi_order=="ascending" ?'': '-decreasing-ordinate ').($by_type=="true" ?'': '-by-type ');
+                    $command = escapeshellcmd($command);
+                    $output = shell_exec($command);
+                    // print $output ;
+
+                    $ferror = fopen("python/tikz_beautifier.log", "r+");    //log on python directory
+                    if (filesize("python/tikz_beautifier.log") > 0) {
+                        $error = fread($ferror,filesize("python/tikz_beautifier.log"));
+                        echo '<h2 class="error"><br />Sorry, an error occurred, read the log and contact the <a href="admin mail">admin</a> if necessary.</h2>';
+                        echo '<label for="log">Log :</label><br />';
+                        echo '<textarea name="log" placeholder="log">'.($error).'</textarea>';
+                    }
+                    fclose($ferror);
+
+                    $fresult = fopen("./tikz_to_convert_clear.tikz", "r+");   //result on php directory
+                    if (filesize("./tikz_to_convert_clear.tikz") > 0) {
+                        echo '<p>Scirpt run in '.round(microtime(true) - $start_time, 3).'s</p>';
+                        $result = fread($fresult,filesize("tikz_to_convert_clear.tikz"));
+                        echo '<label for="result">Result :</label><br />';
+                        echo '<textarea name="result" placeholder="result">'.($result).'</textarea>';
+                    }
+                    fclose($fresult);
+
+
+                    file_put_contents("python/tikz_beautifier.log", "");
+                    file_put_contents("tikz_to_convert_clear.tikz", "");
+                }
+            }
+        ?>
+
+        <fieldset>
+            <legend>Options :</legend>
+            <div id="contener">
+                <div class="ident">
+                    <label for="ident">Identation :</label><br />
+                    <select name="ident" id="ident">
+                        <option value="\t"  <?php echo $ident=="\t"?'selected':'' ?>>tab</option>
+                        <option value=""    <?php echo $ident==""?'selected':'' ?>>disable</option>
+                        <option value=" "   <?php echo $ident==" "?'selected':'' ?>>1 space</option>
+                        <option value="  "  <?php echo $ident=="  "?'selected':'' ?>>2 space</option>
+                        <option value="   " <?php echo $ident=="   "?'selected':'' ?>>3 space</option>
+                        <option value="    "<?php echo $ident=="    "?'selected':'' ?>>4 space</option>
+                    </select>
+                </div>
+                <div class="color">
+                    <label for="color">Set colors names :</label><br />
+                    <input type="radio" name="color" value="true" id="color_yes" <?php echo $color=="true" ? 'checked':'' ?>/> 
+                    <label for="color_yes">Yes</label><br />
+                    <input type="radio" name="color" value="false" id="color_no" <?php echo $color=="true" ? '':'checked' ?>/> 
+                    <label for="color_no">No</label><br />
+                </div>
+                <div class="round">
+                    <label for="round">Round values :</label><br />
+                    <select name="round" id="round">
+                        <option value="-1" <?php echo $round=="-1" ? '':'selected' ?>>disable</option>
+                        <option value="0" <?php echo $round=="0" ? 'selected':'' ?>>0 digit</option>
+                        <option value="1" <?php echo $round=="1" ? 'selected':'' ?>>1 digit</option>
+                        <option value="2" <?php echo $round=="2" ? 'selected':'' ?>>2 digit</option>
+                        <option value="3" <?php echo $round=="3" ? 'selected':'' ?>>3 digit</option>
+                        <option value="4" <?php echo $round=="4" ? 'selected':'' ?>>4 digit</option>
+                    </select>
+                </div>
+                <div class="sort">
+                    <label for="sort">Drawn sort :</label><br />
+                    <input type="radio" name="sort" value="true" id="sort_yes" <?php echo $sort=="true" ? 'checked':'' ?>/> 
+                    <label for="sort_yes">Yes</label><br />
+                    <input type="radio" name="sort" value="false" id="sort_no" <?php echo $sort=="true" ? '':'checked' ?>/> 
+                    <label for="color_no">No</label><br />
+                </div>
+            </div>
+        </fieldset>
+        <?php echo (isset($_POST["collapsible"])? '<h1>'.($_POST["collapsible"]).'</h1>':'') ?>
+        <fieldset>
+            <legend>Advance sorting options :</legend>
+            <div id="contener">
+                <div class="order">
+                    <label for="order">P order :</label><br />
+                    <input type="radio" name="order" value="abscissa" id="abscissa" <?php echo $order=="abscissa" ? 'checked':'' ?>/> 
+                    <label for="abscissa">Abscissa first</label><br />
+                    <input type="radio" name="order" value="ordonnate" id="ordonnate" <?php echo $order=="abscissa" ? '':'checked' ?>/> 
+                    <label for="ordonnate">Ordonnate first</label><br />
+                </div>
+                <div class="absci_order">
+                    <label for="absci_order">Abscissa order :</label><br />
+                    <input type="radio" name="absci_order" value="ascending" id="ascending" <?php echo $absci_order=="ascending" ? 'checked':'' ?>/> 
+                    <label for="ascending">ascending</label><br />
+                    <input type="radio" name="absci_order" value="descending" id="descending" <?php echo $absci_order=="ascending" ? '':'checked' ?>/> 
+                    <label for="absci_order">descending</label><br />
+                </div>
+                <div class="ordi_order">
+                    <label for="ordo_order">Ordinate order :</label><br />
+                    <input type="radio" name="ordi_order" value="ascending" id="ascending" <?php echo $ordi_order=="ascending" ? 'checked':'' ?>/> 
+                    <label for="ascending">ascending</label><br />
+                    <input type="radio" name="ordi_order" value="descending" id="descending" <?php echo $ordi_order=="ascending" ? '':'checked' ?>/> 
+                    <label for="descending">descending</label><br />
+                </div>
+                <div class="by_type">
+                    <label for="by_type">By type :</label><br />
+                    <input type="radio" name="by_type" value="true" id="by_type_true" <?php echo $by_type=="true" ? 'checked':'' ?>/> 
+                    <label for="by_type_true">ascending</label><br />
+                    <input type="radio" name="by_type" value="false" id="by_type_false" <?php echo $by_type=="true" ? '':'checked' ?>/> 
+                    <label for="by_type_false">descending</label><br />
+                </div>
+            </div>
+        </fieldset>
+    </body>
+
+    <?php include("footer.php"); ?>
+
+</html>
