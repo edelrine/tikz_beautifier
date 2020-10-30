@@ -6,6 +6,6 @@
 
 <header>
     <!-- Entête de page -->
-    <a href="home.php">Home</a>
-    <a href="converter.php">converter</a>
+    <a href="home.php"><h2>Home</h2></a>
+    <a href="converter.php"><h2>Converter</h2></a>
 </header>

@@ -21,10 +21,17 @@
             $absci_order = get_input("absci_order", array("ascending" ,"descending"), "ascending"); 
             $ordi_order = get_input("ordi_order", array("ascending" ,"descending"), "ascending"); 
             $by_type = get_input("by_type", $tf, "false"); 
+            $latex = get_input("latex", $tf, "true"); 
+            $clip = get_input("clip", $tf, "true"); 
+            $clip_fix = (isset($_POST["clip_fix"]) and is_float($_POST["clip_fix"]) ? $_POST["clip_fix"] : "1");  
+            $clip_dyn = (isset($_POST["clip_dyn"]) and is_float($_POST["clip_dyn"]) ? $_POST["clip_dyn"] : "0.10");  
             $tikz = (isset($_POST["tikz"]) ? htmlspecialchars($_POST["tikz"]) : "");
+
+            $clip_fix = max(0,min($clip_fix, 42));
+            $clip_dyn = max(-25,min($clip_fix, 25));
         ?>
 
-        <textarea name="tikz" placeholder="Yoru Tikz code here" autofocus required><?php echo $tikz ?></textarea>
+        <textarea name="tikz" placeholder="Your Tikz code here" autofocus required><?php echo $tikz ?></textarea>
         <div id="contener_submit">
             <input type="submit" value="Submit" class="button"/>
             <input type="reset" value="Reset" class="button"/>
@@ -43,13 +50,15 @@
                     $command = 'python3 python/main.py ./tikz_to_convert -hide -tab "'.($ident).'" -round "'.($round).'" ' ;
                     $command = $command.($color=="true" ?'':'-no-color ').($sort=="true" ?'': '-no-sort ').($order=="abscissa" ?'': '-ordinate-last ');
                     $command = $command.($absci_order=="ascending" ?'': '-decreasing-abscissa ').($ordi_order=="ascending" ?'': '-decreasing-ordinate ').($by_type=="true" ?'': '-by-type ');
+                    $command = $command.($tikz =="true" ?'': '-tikz-only ');    
+                    $command = $command.($clip=="true" ?'': '-no-clip ').'-clip-fix "'.($clip_fix).'" -clip-dyn "'.($clip_dyn).'"';
                     $command = escapeshellcmd($command);
                     $output = shell_exec($command);
                     // print $output ;
 
                     $ferror = fopen("python/tikz_beautifier.log", "r+");    //log on python directory
                     if (filesize("python/tikz_beautifier.log") > 0) {
-                        $error = fread($ferror,filesize("python/tikz_beautifier.log"));
+                        $error = htmlspecialchars(fread($ferror,filesize("python/tikz_beautifier.log")));
                         echo '<h2 class="error"><br />Sorry, an error occurred, read the log and contact the <a href="admin mail">admin</a> if necessary.</h2>';
                         echo '<label for="log">Log :</label><br />';
                         echo '<textarea name="log" placeholder="log">'.($error).'</textarea>';
@@ -59,12 +68,11 @@
                     $fresult = fopen("./tikz_to_convert_clear.tikz", "r+");   //result on php directory
                     if (filesize("./tikz_to_convert_clear.tikz") > 0) {
                         echo '<p>Scirpt run in '.round(microtime(true) - $start_time, 3).'s</p>';
-                        $result = fread($fresult,filesize("tikz_to_convert_clear.tikz"));
+                        $result = htmlspecialchars(fread($fresult,filesize("tikz_to_convert_clear.tikz")));
                         echo '<label for="result">Result :</label><br />';
                         echo '<textarea name="result" placeholder="result">'.($result).'</textarea>';
                     }
                     fclose($fresult);
-
 
                     file_put_contents("python/tikz_beautifier.log", "");
                     file_put_contents("tikz_to_convert_clear.tikz", "");
@@ -113,12 +121,39 @@
                 </div>
             </div>
         </fieldset>
-        <?php echo (isset($_POST["collapsible"])? '<h1>'.($_POST["collapsible"]).'</h1>':'') ?>
+        <fieldset>
+            <legend>Margin and Latex default packtage :</legend>
+            <div id="contener">
+                <div class="clip">
+                    <label for="clip">Set margin (clip):</label><br />
+                    <input type="radio" name="clip" value="true" id="clip_yes" <?php echo $clip=="true" ? 'checked':'' ?>/> 
+                    <label for="clip_yes">Yes</label><br />
+                    <input type="radio" name="clip" value="false" id="clip_no" <?php echo $clip=="true" ? '':'checked' ?>/> 
+                    <label for="color_no">No</label><br />
+                </div>
+                <div class="clip_fix">
+                    <label for="clip_fix">Set const margin :</label><br />
+                    <input type="number" min="0" max="42" step="0.5" id="clip_fix" name="clip_fix" class="number_input" <?php echo ($clip_fix == "0" ? 'placeholder="0"' : 'value='.$clip_fix)?>/>
+                </div>
+                <div class="clip_dyn">
+                    <label for="clip_dyn">Set dynamic margin :</label><br />
+                    <input type="number" min="-25" max="25" step="0.05" id="clip_dyn" name="clip_dyn" class="number_input" <?php echo ($clip_dyn == "0" ? 'placeholder="0"' : 'value='.$clip_dyn)?>/>
+                </div>
+                <div class="latex">
+                    <label for="latex">Keep Latex :</label><br />
+                    <input type="radio" name="latex" value="true" id="latex_yes" <?php echo $latex=="true" ? 'checked':'' ?>/> 
+                    <label for="latex_yes">Keep latex</label><br />
+                    <input type="radio" name="latex" value="false" id="latex_no" <?php echo $latex=="true" ? '':'checked' ?>/> 
+                    <label for="latex_no">Only Tikz</label><br />
+                    </select>
+                </div>
+            </div>
+        </fieldset>
         <fieldset>
             <legend>Advance sorting options :</legend>
             <div id="contener">
                 <div class="order">
-                    <label for="order">P order :</label><br />
+                    <label for="order">Priority order :</label><br />
                     <input type="radio" name="order" value="abscissa" id="abscissa" <?php echo $order=="abscissa" ? 'checked':'' ?>/> 
                     <label for="abscissa">Abscissa first</label><br />
                     <input type="radio" name="order" value="ordonnate" id="ordonnate" <?php echo $order=="abscissa" ? '':'checked' ?>/> 

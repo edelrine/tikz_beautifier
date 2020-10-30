@@ -1,4 +1,4 @@
-'\documentclass[10pt]{article}
+\documentclass[10pt]{article}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.15}
 \usepackage{mathrsfs}
