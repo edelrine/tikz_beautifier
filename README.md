@@ -9,6 +9,8 @@ You can generate Tikz on [Geogebra](https://www.geogebra.org/classic) if you go 
 - Sort drawn command line
     - by category 
     - by position 
+- Clip function
+- Remove auto latex import
 
 Lightweight, only html, css and php !
 
