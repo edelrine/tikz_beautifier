@@ -1,0 +1,4 @@
+[Set colors name] :
+[Errno 2] No such file or directory: '/home/lmx/Desktop/tikz_beautifier/colors/rgb_to_name.csv'
+[Tikz only] :
+local variable 'self' referenced before assignment
