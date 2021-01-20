@@ -54,21 +54,22 @@
                     $command = $command.($clip=="true" ?'': '-no-clip ').'-clip-fix "'.($clip_fix).'" -clip-dyn "'.($clip_dyn).'"';
                     $command = escapeshellcmd($command);
                     $output = shell_exec($command);
-                    // print $output ;
 
-                    $ferror = fopen("python/tikz_beautifier.log", "r+");    //log on python directory
-                    if (filesize("python/tikz_beautifier.log") > 0) {
-                        $error = htmlspecialchars(fread($ferror,filesize("python/tikz_beautifier.log")));
-                        echo '<h2 class="error"><br />Sorry, an error occurred, read the log and contact the <a href="admin mail">admin</a> if necessary.</h2>';
+                    $pathferror = "python/tikz_beautifier.log";
+                    $ferror = fopen($pathferror, "r+");    //log on python directory
+                    if (filesize($pathferror) > 0) {
+                        $error = htmlspecialchars(fread($ferror,filesize($pathferror)));
+                        echo '<h2 class="error"><br />Sorry, an error occurred, read the log and contact the <a href="mailto:louis-max.harter@protonmail.com">admin</a> if necessary.</h2>';
                         echo '<label for="log">Log :</label><br />';
                         echo '<textarea name="log" placeholder="log">'.($error).'</textarea>';
                     }
                     fclose($ferror);
 
-                    $fresult = fopen("./tikz_to_convert_clear.tikz", "r+");   //result on php directory
-                    if (filesize("./tikz_to_convert_clear.tikz") > 0) {
+                    $pathfresult = "./tikz_to_convert_clear.tikz";
+                    $fresult = fopen($pathfresult, "r+");   //result on php directory
+                    if (filesize($pathfresult) > 0) {
                         echo '<p>Scirpt run in '.round(microtime(true) - $start_time, 3).'s</p>';
-                        $result = htmlspecialchars(fread($fresult,filesize("tikz_to_convert_clear.tikz")));
+                        $result = htmlspecialchars(fread($fresult,filesize($pathfresult)));
                         echo '<label for="result">Result :</label><br />';
                         echo '<textarea name="result" placeholder="result">'.($result).'</textarea>';
                     }
