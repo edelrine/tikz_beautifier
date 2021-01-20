@@ -1,6 +1,0 @@
-\begin {tikzpicture}
-\begin {scriptsize}
-\draw (2, 3) node {$c$};
-\draw (1, 4) node {$c$};
-\end {scriptsize}
-\end {tikzpicture}
