@@ -1,0 +1,43 @@
+\definecolor{rvwvcq}{rgb}{0.08235294117647059,0.396078431372549,0.7529411764705882}
+\definecolor{dtsfsf}{rgb}{0.8274509803921568,0.1843137254901961,0.1843137254901961}
+\definecolor{wrwrwr}{rgb}{0.3803921568627451,0.3803921568627451,0.3803921568627451}
+\definecolor{sexdts}{rgb}{0.1803921568627451,0.49019607843137253,0.19607843137254902}
+	\begin{tikzpicture}[line cap=round,line join=round,&gt;=triangle 45,x=1cm,y=1cm]
+	\clip(0,3.4) rectangle (7,7.4); %boite pour voir le rectangle
+\draw [line width=5.2pt,color=rvwvcq] (2,6.4)-- (5,6.4);
+\draw [line width=5.2pt,dash pattern=on 1pt off 1pt,color=rvwvcq] (2,6.4)-- (1,6.4);
+\draw [line width=5.2pt,dash pattern=on 1pt off 1pt,color=rvwvcq] (5,6.4)-- (6,6.4);
+\draw [line width=5.2pt,color=rvwvcq] (2,5.4)-- (5,5.4);
+\draw [line width=5.2pt,dash pattern=on 1pt off 1pt,color=rvwvcq] (2,5.4)-- (1,5.4);
+\draw [line width=5.2pt,dash pattern=on 1pt off 1pt,color=rvwvcq] (5,5.4)-- (6,5.4);
+\draw [line width=5.2pt,color=rvwvcq] (2,4.4)-- (5,4.4);
+\draw [line width=5.2pt,dash pattern=on 1pt off 1pt,color=rvwvcq] (2,4.4)-- (1,4.4);
+\draw [line width=5.2pt,dash pattern=on 1pt off 1pt,color=rvwvcq] (5,4.4)-- (6,4.4);
+\draw [shift={(2.3525092824895837,5.541350652517282)},line width=2pt,color=wrwrwr]  plot[domain=0.3813545370572198:3.522947190647013,variable=\t]({1*0.3797931031606317*cos(\t r)+0*0.3797931031606317*sin(\t r)},{0*0.3797931031606317*cos(\t r)+1*0.3797931031606317*sin(\t r)});
+\draw [shift={(3.6537391497339016,5.557721840954473)},line width=2pt,color=wrwrwr]  plot[domain=-0.4274183610700337:2.714174292519759,variable=\t]({1*0.3804901517004999*cos(\t r)+0*0.3804901517004999*sin(\t r)},{0*0.3804901517004999*cos(\t r)+1*0.3804901517004999*sin(\t r)});
+\draw [line width=2pt,color=wrwrwr] (2.7050185649791674,5.682701305034564)-- (2.699173644809857,5.8467133073613);
+\draw [line width=2pt,color=wrwrwr] (3.307478299467803,5.715443681908947)-- (3.309249487397899,5.88115307266869);
+\draw [line width=2pt,color=wrwrwr] (2.7050185649791674,5.682701305034564)-- (2.5663345500527837,5.674514480824353);
+\draw [line width=2pt,color=wrwrwr] (3.307478299467803,5.715443681908947)-- (3.4420885821549723,5.718794179076711);
+\begin{scriptsize}
+\draw [fill=wrwrwr] (1,6.4) circle (4.5pt);
+\draw [fill=sexdts] (2,6.4) circle (4.5pt);
+\draw [fill=wrwrwr] (3,6.4) circle (4.5pt);
+\draw [fill=sexdts] (4,6.4) circle (4.5pt);
+\draw [fill=dtsfsf] (5,6.4) circle (4.5pt);
+\draw [fill=sexdts] (6,6.4) circle (4.5pt);
+\draw [fill=black] (1,5.4) circle (4.5pt);
+\draw [fill=sexdts] (2,5.4) circle (4.5pt);
+\draw [fill=black] (3,5.4) circle (4.5pt);
+\draw [fill=dtsfsf] (4,5.4) circle (4.5pt);
+\draw [fill=black] (5,5.4) circle (4.5pt);
+\draw [fill=wrwrwr] (6,5.4) circle (4.5pt);
+\draw [fill=wrwrwr] (1,4.4) circle (4.5pt);
+\draw [fill=black] (2,4.4) circle (4.5pt);
+\draw [fill=dtsfsf] (3,4.4) circle (4.5pt);
+\draw [fill=black] (4,4.4) circle (4.5pt);
+\draw [fill=wrwrwr] (5,4.4) circle (4.5pt);
+\draw [fill=black] (6,4.4) circle (4.5pt);
+\draw [fill=sexdts] (2.994081770947564,4.601872982633315) circle (4.5pt);
+\end{scriptsize}
+\end{tikzpicture}
