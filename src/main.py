@@ -1,86 +1,94 @@
+import traceback
 from class_latex import *
 from class_multidimensionalarray import *
 
 
 def tikz_beautifier(path_file, **DEFAULT_OPTION):
     TIME_START = time.time()
-    error = ""
+    error_log = ""
 
-    try:
+    def run(fct, error_message, **args):
+        nonlocal error_log
+        try:
+            return fct(**args)
+        except:
+            error_log += "["+error_message+"]" +"\n" + traceback.format_exc() + "\n"
+
+    def open_file():
         with open(path_file, "r") as file:
-            latex = Latex("".join(file.read()))
-    except Exception as e:
-        error += "[Open file] :\n" + str(e) + "\n"
+            return Latex("".join(file.read()))
+    latex = run(open_file, "Open file") 
 
     if latex == []:
         error += "[Open file] :\nParsed file is empty.\n"
         return;
 
-    if not options["no_color"]:
-        try:
-            rgb_to_name = {}
-            with open(os.path.join(os.getcwd(), "colors", "rgb_to_name.csv"), "r") as csv_file:
-                csv_reader = csv.reader(csv_file, delimiter=',')
-                for row in csv_reader:
-                    rgb_to_name[row[0]] = [int(row[1]), int(row[2]), int(row[3])]
-            latex.rename_colors(rgb_to_name)
-        except Exception as e:
-            error += "[Set colors name] :\n" + str(e) + "\n"
+    def set_colors():
+        if options["no_color"]:
+            return
+        rgb_to_name = {}
+        with open(os.path.join(os.getcwd(), "colors", "rgb_to_name.csv"), "r") as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            for row in csv_reader:
+                rgb_to_name[row[0]] = [int(row[1]), int(row[2]), int(row[3])]
+        latex.rename_colors(rgb_to_name)
+    run(set_colors, "set colors")
 
-    if int(options["round"]) >= 0:
-        try:
-            latex.round_digit(nb_digit=int(options["round"]))
-        except Exception as e:
-            error += "[Round float] :\n" + str(e) + "\n"
+    def set_clip():
+        if options["no_clip"]:
+            return
+        latex.tikz_set_clip(fixed_margin=options["clip_fix"], dynam_margin=options["clip_dyn"])
+    run(set_clip, "set clip")
 
-    if not options["no_sort"]:
-        try:
-            latex.tikz_sort_line(ordinate_first=options["ordinate_first"],
-                            decreasing_abscissa=options["decreasing_abscissa"],
-                            decreasing_ordinate=options["decreasing_ordinate"])
-        except Exception as e:
-            error += "[Sort drawn] :\n" + str(e) + "\n"
 
-    if not options["no_clip"]:
-        try:
-            latex.tikz_set_clip(fixed_margin=options["clip_fix"], dynam_margin=options["clip_dyn"])
-        except Exception as e:
-            error += "[Set clip] :\n" + str(e) + "\n"
+    def round_digit():
+        if int(options["round"]) == 0:
+            return
+        latex.round_digit(nb_digit=int(options["round"]))
+    run(round_digit, "round digit")
 
-    if options["tikz_only"]:
-        try:
-            latex.tikz_only()
-        except Exception as e:
-            error += "[Tikz only] :\n" + str(e) + "\n"
+    latex.tikz_sort_line(ordinate_first=options["ordinate_first"],
+                             decreasing_abscissa=options["decreasing_abscissa"],
+                             decreasing_ordinate=options["decreasing_ordinate"])
 
-    if not options["hide"]:
-        try:
-            print(latex.to_string(tabulation=options["tab"]))
-            print()
-        except Exception as e:
-            error += "[show result] :\n" + str(e) + "\n"
 
-    if not options["no_save"] or True:
-        try:
-            name = path_file.split("/")[-1].split(".")[0]
-            file_to_save = "".join([p + "/" for p in path_file.split("/")[:-1]]) + name + "_clear.tikz"
-            with open(file_to_save, 'w+') as d:
-                d.write(latex.to_string(tabulation=options["tab"]))
-            print("file save as", file_to_save)
-        except Exception as e:
-            error += "[save file] :\n" + str(e) + "\n"
+    def sort_lines():
+        if options["no_sort"]:
+            return
+        latex.tikz_sort_line(ordinate_first=options["ordinate_first"],
+                             decreasing_abscissa=options["decreasing_abscissa"],
+                             decreasing_ordinate=options["decreasing_ordinate"])
+    run(sort_lines, "sort lines")
 
-    try:
+    def tikz_only():
+        if not options["tikz_only"]:
+            return
+        latex.tikz_only()
+    run(tikz_only, "tikz only")
+
+    def show_latex():
+        if options["hide"]:
+            return
+        print(latex.to_string(tabulation=options["tab"]), "\n")
+    run(show_latex, "show result")
+
+    def save():
+        if options["no_save"] or True:
+            return
+        name = path_file.split("/")[-1].split(".")[0]
+        file_to_save = "".join([p + "/" for p in path_file.split("/")[:-1]]) + name + "_clear.tikz"
+        with open(file_to_save, 'w+') as d:
+            d.write(latex.to_string(tabulation=options["tab"]))
+        print("file save as", file_to_save)
+    run(save, "save file")
+
+    def save_error_log():
         with open(os.path.join(os.getcwd(), "tikz_beautifier.log"), 'w+') as d:
-            d.write(error)
-    except Exception as e:
-        error += "[save error file] :\n" + str(e) + "\n"
+            d.write(error_log)
+    run(save_error_log, "save error log")
 
-    if error != "":
-        print()
-        print("Error :")
-        print(error)
-        print()
+    if error_log != "":
+        print("\n Error :",error_log,"\n\n")
 
     print("End in", round(time.time() - TIME_START, 4), "s")
 

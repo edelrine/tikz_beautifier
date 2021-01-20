@@ -1,7 +1,8 @@
-\documentclass[10pt]{article}
-\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\documentclass[1.0 0pt]{article}
+\definecolor{black}{rgb}{0.302, 0.302, 1.0}
 \begin{tikzpicture}[]
-\begin{scriptsize}
-\draw[color=ududff] (-4.1,3.94) node {$c$};
-\end{scriptsize}
+	\begin{scriptsize}
+		\draw[color=black](-4.1, 3.94) node {$c$};
+	\end{scriptsize}
 \end{tikzpicture}
+\clip(-5.1,-0.678) rectangle (-3.1, 0.518)

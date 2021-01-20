@@ -116,13 +116,11 @@ class Latex(MultiDimensionalArray):
         """
         for pointer in self.search("\\begin"):
             pointer.next_node()
-            pointer.go_down()
-            pointer.next_node()
-            if pointer.get_element() == ["tikzpicture"]:
-                pointer.go_up()
-                yield pointer
+            if isinstance(pointer.get_element(), list):
+                if pointer.get_element()[1] == ['tikzpicture']:
+                    yield pointer
 
-    def tikz_set_clip(self, index_start=[-1], fixed_margin=1, dynam_margin=1.1):
+    def tikz_set_clip(self, index_start=None, fixed_margin=1, dynam_margin=1.1):
         """set clip on tikz
         >>> txt = "\\draw[color=black] (-4, 4) node {$A$};\\n\\draw[color=Neon_Blue] (-3, 3.) node {$B$};\\n\\draw[fill=Neon_Blue] (9, 9) circle (2pt);"
         >>> latex = Latex(txt)
@@ -132,7 +130,7 @@ class Latex(MultiDimensionalArray):
         ['\\\\draw', '[', ['color', '=', 'black'], ']', '(', [-4.0, ',', 4.0], ')', 'node', '{', ['$A$'], '}', ';', '\\n', '\\\\clip', '(', [-5.05, ',', 2.3], ')', 'rectangle', '(', [-1.95, ',', -2.3], ')', '\\n', '\\\\draw', '[', ['color', '=', 'Neon_Blue'], ']', '(', [-3.0, ',', 3.0], ')', 'node', '{', ['$B$'], '}', ';', '\\n', '\\\\draw', '[', ['fill', '=', 'Neon_Blue'], ']', '(', [9.0, ',', 9.0], ')', 'circle', '(', ['2pt'], ')', ';']
         """
 
-        if index_start == [-1]:
+        if index_start == None:
             if [tikz for tikz in self.get_tikz()]:
                 for tikz in self.get_tikz():
                     self.tikz_set_clip(index_start=tikz, fixed_margin=fixed_margin, dynam_margin=dynam_margin)
@@ -142,6 +140,7 @@ class Latex(MultiDimensionalArray):
 
         x_max, y_max = -float("inf"), -float("inf")
         x_min, y_min = float("inf"), float("inf")
+
         for pointer in self.search("node", index_start=index_start):
             # \draw[color=Neon_Blue] (-6.86, 2.24) node {$A$};
             pointer.previous_coordinate()
@@ -165,7 +164,6 @@ class Latex(MultiDimensionalArray):
 
         if not [clip for clip in self.search("\\clip", index_start=index_start)]:
             # set new clip, for exemple : \clip (None, None) rectangle (None, None);
-            pointer = Pointer(self, index=index_start)
             pointer.find_next("\n")
             pointer.insert(['\n', '\\clip', '(', [None, ',', None], ')', 'rectangle', '(', [None, None], ')'],
                            extend=True)
@@ -173,9 +171,10 @@ class Latex(MultiDimensionalArray):
         for pointer in self.search("\\clip", index_start=index_start):
             # edit clip
             pointer.next_node()
-            pointer.set_element([x_center - x_range, ",", y_center - y_range])
+            pointer.set_element([str(x_center - x_range), ",", str(y_center - y_range)])
             pointer.next_node()
-            pointer.set_element([x_center + x_range, ",", y_center + y_range])
+            pointer.set_element([str(x_center + x_range), ",", str(y_center + y_range)])
+
 
     def tikz_sort_line(self, index_start=[-1], ordinate_first=False, decreasing_abscissa=False,
                        decreasing_ordinate=False):
@@ -228,7 +227,7 @@ class Latex(MultiDimensionalArray):
             p = Pointer(mda)
             p.next_coordinate()
             if not p.is_coordinate():
-                return float("inf")
+                return (float("inf"),float("inf"))
 
             x, comma, y = p.get_element().copy()
             x, y = float(x), float(y)
@@ -240,8 +239,8 @@ class Latex(MultiDimensionalArray):
                 y *= -1
 
             if ordinate_first:
-                return y, x
-            return x, y
+                return (y, x)
+            return (x, y)
 
         lines.sort(key=lambda line: get_line_order(line))
         flatten_lines = []
@@ -256,14 +255,8 @@ class Latex(MultiDimensionalArray):
         tikzs = [tikz for tikz in self.get_tikz]
         self = tikzs[n].get_element()
 
-
-class Tikz(Latex):
-    def __init__(self, text):
-        """Init a Tikz class based on Latex"""
-        super(Tikz, self).__init__(text)
-
-
 if __name__ == '__main__':
     import doctest
+    # doctest.testmod()
+    doctest.run_docstring_examples(Latex.get_tikz, globals())
 
-    doctest.testmod()
