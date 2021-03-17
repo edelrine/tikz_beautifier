@@ -4,7 +4,6 @@ from collections import deque
 
 from utils import *
 from class_multidimensionalarray import *
-
 class Latex(MultiDimensionalArray):
     def __init__(self, string):
         """Init a Latex class based on MultiDimensionalArray.
