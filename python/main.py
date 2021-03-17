@@ -1,15 +1,15 @@
 import time
+import argparse
 import traceback
 from class_latex import *
 from class_multidimensionalarray import *
 
-
-def tikz_beautifier(path_file, **DEFAULT_OPTION):
-    TIME_START = time.time()
-    error_log = ""
+def tikz_beautifier(file, multidimensional=False ,**DEFAULT_OPTION):
+    """run beautifier from python return (latex result, logs)
+    set multidimensional=True if you want to get only multidensional array"""
+    error_log=""
+    latex = Latex(file)
     dirpath, filename = os.path.split(os.path.abspath(__file__))
-
-
     def run(fct, error_message, **args):
         nonlocal error_log
         try:
@@ -17,14 +17,6 @@ def tikz_beautifier(path_file, **DEFAULT_OPTION):
         except:
             error_log += "["+error_message+"]" +"\n" + traceback.format_exc() + "\n"
 
-    def open_file():
-        with open(path_file, "r") as file:
-            return Latex("".join(file.read()))
-    latex = run(open_file, "Open file") 
-
-    if latex == []:
-        error += "[Open file] :\nParsed file is empty.\n"
-        return;
 
     def set_colors():
         if options["no_color"]:
@@ -36,6 +28,7 @@ def tikz_beautifier(path_file, **DEFAULT_OPTION):
                 rgb_to_name[row[0]] = [int(row[1]), int(row[2]), int(row[3])]
         latex.rename_colors(rgb_to_name)
     run(set_colors, "set colors")
+
 
     def set_clip():
         if options["no_clip"]:
@@ -54,6 +47,7 @@ def tikz_beautifier(path_file, **DEFAULT_OPTION):
                              decreasing_abscissa=options["decreasing_abscissa"],
                              decreasing_ordinate=options["decreasing_ordinate"])
 
+
     def sort_lines():
         if options["no_sort"]:
             return
@@ -62,17 +56,61 @@ def tikz_beautifier(path_file, **DEFAULT_OPTION):
                              decreasing_ordinate=options["decreasing_ordinate"])
     run(sort_lines, "sort lines")
 
+
     def tikz_only():
         if not options["tikz_only"]:
             return
         latex.tikz_only()
     run(tikz_only, "tikz only")
 
+    if multidimensional:
+        return latex, error_log
+
+    latex_result = "No result"
+    def get_result():
+        nonlocal latex_result
+        strip = options['no_strip'] == False
+        latex_result = latex.to_string(tabulation=options["tab"], strip=strip)
+    run(get_result, "get result")
+    return latex_result, error_log
+
+
+
+
+def tikz_beautifier_command_line(path_file, **DEFAULT_OPTION):
+    """run beautifier from terminal"""
+    TIME_START = time.time()
+    error_log = ""
+    dirpath, filename = os.path.split(os.path.abspath(__file__))
+
+    def run(fct, error_message, **args):
+        nonlocal error_log
+        try:
+            return fct(**args)
+        except:
+            error_log += "["+error_message+"]" +"\n" + traceback.format_exc() + "\n"
+
+
+    def open_file():
+        with open(path_file, "r") as file:
+            return "".join(file.read())
+    latex = run(open_file, "Open file") 
+
+    if latex == []:
+        error += "[Open file] :\nParsed file is empty.\n"
+        return;
+
+
+    latex_result, logs = tikz_beautifier(latex)
+    error_log += logs
+
+
     def show_latex():
         if options["hide"]:
             return
-        print(latex.to_string(tabulation=options["tab"]), "\n")
+        print(latex_result, "\n")
     run(show_latex, "show result")
+
 
     def save():
         if options["no_save"]:
@@ -80,9 +118,10 @@ def tikz_beautifier(path_file, **DEFAULT_OPTION):
         name = path_file.split("/")[-1].split(".")[0]
         file_to_save = "".join([p + "/" for p in path_file.split("/")[:-1]]) + name + "_clear.tikz"
         with open(file_to_save, 'w+') as d:
-            d.write(latex.to_string(tabulation=options["tab"]))
+            d.write(latex_result)
         print("file save as", file_to_save)
     run(save, "save file")
+
 
     if error_log != "":
         t = time.localtime()
@@ -98,7 +137,10 @@ def tikz_beautifier(path_file, **DEFAULT_OPTION):
     print("End in", round(time.time() - TIME_START, 4), "s")
 
 
+
+
 if __name__ == '__main__':
+    #extract command line parameters, see tikz_beautifier_command_line or tikz_beautifier for main code
     parser = argparse.ArgumentParser(description="Formats a Tikz code",
                                      formatter_class=argparse.ArgumentDefaultsHelpFormatter)
     parser.add_argument('path', type=str, help="the path of the file to convert")
@@ -121,9 +163,10 @@ if __name__ == '__main__':
     parser.add_argument("-clip-dyn", type=float, help="specifies a dynamic margin (%)", default="0.1")
     parser.add_argument("-tikz-only", "-to", help="remove Latex default importation", action='store_true')
 
+    parser.add_argument("-no-strip", "-ns", help="keep extra spaces", action='store_true')
+
     args = parser.parse_args()
-    # print(vars(args))
     options = {}
     for keys, value in vars(args).items():
         options[keys] = value
-    tikz_beautifier(options["path"], **options)
+    tikz_beautifier_command_line(options["path"], **options)

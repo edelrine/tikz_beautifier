@@ -5,7 +5,6 @@ from collections import deque
 from utils import *
 from class_multidimensionalarray import *
 
-
 class Latex(MultiDimensionalArray):
     def __init__(self, string):
         """Init a Latex class based on MultiDimensionalArray.
@@ -31,8 +30,6 @@ class Latex(MultiDimensionalArray):
         pointer = Pointer(latex)
 
         for token in re.split(REGEX_SPLIT_DATA, string):
-            if token != "\n":
-                token = token.strip()
             if token == "":
                 continue
 
@@ -41,6 +38,7 @@ class Latex(MultiDimensionalArray):
                     pointer.go_up()
                 pointer.go_up()
 
+            # print("token :",token)
             pointer.append(token)
 
             if token in BRACKET_OPEN:
@@ -75,8 +73,10 @@ class Latex(MultiDimensionalArray):
             old_name = pointer.get_element()[0]
 
             pointer.next_node()  # rgb
-            if pointer.get_element() != ["rgb"]:
-                continue
+            if len(pointer.get_element()) == 0 :
+                continue    #empty  categorie
+            if stripped(pointer.get_element()[0]) != "rgb" :
+                continue    #unknow categorie
 
             pointer.next_node()  # hue {"0.3", ",", "0.3", ",", "1"}
             r, comma, g, comma, b = pointer.get_element()
@@ -112,12 +112,19 @@ class Latex(MultiDimensionalArray):
         >>> [pointer for pointer in latex.get_tikz()]
         [[20]]
         >>> [pointer.get_element() for pointer in latex.get_tikz()]
-        [['{', ['tikzpicture'], '}', '[', [], ']', '\\n', '\\\\begin', ['{', ['scriptsize'], '}', '\\n', '\\\\draw', '[', ['color', '=', 'ududff'], ']', '(', ['-4.1', ',', '3.94'], ')', 'node', '{', ['$c$'], '}', ';', '\\n'], '\\\\end', '{', ['scriptsize'], '}', '\\n']]
+        [['{', ['tikzpicture'], '}', '[', [], ']', '\\n', '\\\\begin', ['{', ['scriptsize'], '}', '\\n', '\\\\draw', '[', ['color', '=', 'ududff'], ']', '(', ['-4.1', ',', '3.94'], ')', ' node ', '{', ['$c$'], '}', ';', '\\n'], '\\\\end', '{', ['scriptsize'], '}', '\\n']]
         """
         for pointer in self.search("\\begin"):
-            pointer.next_node()
+            pointer.next_node()     #go to \begin content
+            pointer.go_down()       #enter the content
+            pointer.next_node()     #go \begin categorie
+
             if isinstance(pointer.get_element(), list):
-                if pointer.get_element()[1] == ['tikzpicture']:
+                if len(pointer.get_element()) == 0:
+                    continue
+
+                if stripped(pointer.get_element()[0]) == 'tikzpicture':
+                    pointer.go_up()
                     yield pointer
 
     def tikz_set_clip(self, index_start=None, fixed_margin=1, dynam_margin=1.1):
@@ -149,10 +156,13 @@ class Latex(MultiDimensionalArray):
 
             x, comma, y = pointer.get_element()
             x, y = float(x), float(y)
-            x_min = min(x_min, x);
+            x_min = min(x_min, x)
             x_max = max(x_max, x)
-            y_min = min(y_min, y);
+            y_min = min(y_min, y)
             y_max = max(y_max, x)
+
+        if x_max == -float("inf"):
+            return  #no coordinate find
 
         x_center = (x_max + x_min) / 2
         y_center = (y_max + y_min) / 2
@@ -162,6 +172,8 @@ class Latex(MultiDimensionalArray):
         x_range = x_range * dynam_margin + fixed_margin
         y_range = y_range * dynam_margin + fixed_margin
 
+
+
         if not [clip for clip in self.search("\\clip", index_start=index_start)]:
             # set new clip, for exemple : \clip (None, None) rectangle (None, None);
             pointer.find_next("\n")
@@ -169,7 +181,6 @@ class Latex(MultiDimensionalArray):
                            extend=True)
 
         for pointer in self.search("\\clip", index_start=index_start):
-            print("ok find")
             # edit clip
             pointer.next_node()
             pointer.set_element([str(x_center - x_range), ",", str(y_center - y_range)])

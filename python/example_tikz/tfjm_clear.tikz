@@ -1,0 +1,224 @@
+\input{../config_TFJM.tex}
+\begin{document}
+	
+	\title{Vive les Grenouilles libres !}
+	\maketitle
+	
+	\tableofcontents
+	\newpage
+	\section*{Notation}
+	 L'étang sera représenté par le graphe non-orienté $G=(V;E)$ avec :
+	\\$V$ : est l'ensemble des nénuphars.
+	\\$v$ : un nénuphar quelconque.
+	\\$E$ : l'ensemble des arrêtes entre les nénuphars.
+	\\$A_n$ : est l'ensemble des nénuphars protégés par Antoine au tour $n$
+	\\$a_n$ : est le nénuphars protégé par Antoine au tour $n$, Antoine joue quand $n=2k+1$,$k\in\mathbf {N}$
+	\\$B_n$ : est l'ensemble des nénuphars protégés par Benoit au tour $n$
+	\\$b_n$ : est le nénuphars protégés par Benoit au tour $n$, Benoit joue quand $n=2k$,$k\in\mathbf {N}^*$
+	\\$L_n$ : est l'ensemble des nénuphars vierge au tour $n$ : $L_n=(V \cup A_n)\cap(V \cup B_n)$
+	\\$\mu(x, y)$ : la chaine reliant $x$ à $y$ si elle existe.
+	\\$Accessible(v)$ : ensemble des nénuphars accessible depuis le nénuphar $v$,$Accessible (v)=\{x \in L_n~|~\exists\mu (x, v)\}$
+	\\$O_n$ : L'ensemble des nénuphars adjacent à un nénuphars protégé et qui donne accès à une infinité d'autres nénuphars.
+	\\$o_n$ : nombre de nénuphars qui sont reliés à une infinité d'autres nénuphars. $o_n=Card ({v \in V_n | \exists x,\mu(x, v)\to +\infty})$ + définir par sous-graphe 
+	
+	
+	
+	
+	\section{Question 1}
+	\subsection{$k=1$}
+	 Pour qu'Antoine gagne, il faut qu'il puisse poser que la grenouille puisse rejoindre une infinité d'autres nénuphars depuis un nénuphar protégé.
+	\\Nous allons prouver que Benoit est gagnant en prouvant que chaque nénuphar protégé est cerné par des nénuphars coulé.
+	\begin{proposition}
+		 Benoit est gagnant dans le cas $k=1$ avec la stratégie suivante :
+		\\$$b_n\left\{
+			\begin{array}{ll}
+				 b_n=min (A_n)- 1 \text {Si} Card (B_n)\equiv 0[2.0]\\
+				 b_n=max (A_n)+ 1 \text {Si} Card (B_n)\equiv 1[2.0]\\
+			\end{array}
+			\right.
+			$$
+	\end{proposition}
+	\subsubsection{Preuve :}
+	\\A la fin de la partie, Antoine doit déposer la grenouille sur un de ses nénuphars que nous noterons $a_k$.
+	\subsubsection{$k \equiv 0 [2.0]$}
+	 Nous en déduisons selon la stratégie de Benoit, que $b_{k+1}> b_n$, et $b_{k+3}< b_n$. La grenouille sera donc dans le meilleur des cas, restreint à l'intervalle $\ee {b_{k+3}, b_{k+1}}$, qui est un ensemble dénombrable de nénuphars.
+	\subsubsection{$k \equiv 1 [2.0]$}
+	 Benoit est gagnant comme dans le cas $k \equiv 0 [2.0]$, seul quelques bornes changent. Nous avons,$k \equiv 1 [2.0]\iff k+1 \equiv 0[2.0]$ qui nous permet de déduire que $b_{k+1}< b_n$, et $b_{k+3}> b_n$. La grenouille sera donc dans le meilleur des cas, restreint à l'intervalle $\ee {b_{k+1}, b_{k+3}}$
+	\\Dans le deux cas, Benoit est bien gagnant, car la grenouille ne peux pas rejoindre une infinité de nénuphars.
+	
+	
+	\subsection{$k\geq1$}
+	\begin{lemme}\label{separation ensemble}
+		 Si deux ensemble possède au plus une liaison entre eux par nénuphar, alors Benoit peut s'assurer que la grenouille ne puisse pas passer d'un ensemble à un autre.
+	\end{lemme}
+	\textbf{Preuve :}
+	\\Notons $U$ et $V$ deux ensembles de nénuphars et $u\in U$,$v \in V$.
+	\\Pour s'assurer de la liaison entre $U$ et $V$, il faut que Antoine protège $u$ et $v$ tel que $(u, v)\in E$. Comme il ne peux y avoir qu'un seul liaison entre les deux ensembles pour un nénuphar, Benoit peut couler le nénuphar associer pour éviter la liaison entre les deux ensembles.
+	\\Par exemple, si Antoine protège $u$, seul le nénuphar $v$ fait la liaison avec $V$, Benoit peut donc couler $v$ pour s'assurer que les deux ensembles ne seront pas lié. De même si Antoine protège $v$, Benoit peut couler $u$.
+	\\Benoit peut donc éviter que la grenouille rejoigne un ensemble $U$ depuis un ensemble $V$ si $\forall u \in U, Card (N (u)\cap V)\leq 1$ et si $\forall v \in V, Card (N (v)\cap U)\leq 1$.
+	\bigskip
+	 Dans le cas $k\geq1$, pour séparer l'ensemble ${(x, y), x < l}$ et l'ensemble ${(x, y), x \geq l}$ il faut couler $k$ nénuphars. Pour séparer les ensembles, il faut couler les nénuphars $(l-1, 0.0)$ ou $(l, 0.0)$, puis $(l-1, 1.0)$ ou $(l, 1.0)$ j'usqua $(l-1, k)$ ou $(l, k)$. Il n'y a pas de contrainte d'ordre, mais si Antoine protège un des nénuphars $(l-1, y)$ ou $(l, y)$ il faut que Benoit coule respectivement $(l, y)$ ou $(l-1, y)$.
+	\\Nous pouvons nous baser sur la stratégie de Benoit pour le cas $k=1$ qui consiste a emprisoner les coup d'Antoine. Par disjonction des cas nous avons :
+	
+	\subsubsection{$Card (B_n)\equiv 0[k]$}
+	 Si $Card (B_n)\equiv 0[2k]$ alors Benoit commence à séparer l'ensemble ${(x, y), x \geq min (A_n)-1.0}$ et l'ensemble  ${(x, y), x>min (A_n)-1.0}$. Comme la séparation précède sur l'axe des abscisse tout les nénuphars protégé d'Antoine, nous sommes sûre qu'il n'a pas déjà commencé à protéger des nénuphars permettant de relier ces deux ensembles.
+	\\Si $Card(B_n)\equiv 1[2k]$, alors Benoit commence à séparer l'ensemble ${(x, y), x < max (A_n) 1.0}$ et l'ensemble  ${(x, y), x \geq max (A_n) 1.0}$.
+	\subsubsection{$Card (B_n)\not\equiv 0[k]$}
+	 Nous avons vu qu'il faut $k$ coup pour que Benoit sépare deux ensembles, nous en déduisons que tant que $Card (B_n)\not\equiv 0[k]$, Benoit n'a pas finit de séparer les deux derniers ensembles et doit continuer la séparation.
+	\subsubsection{Bilan}
+	 Pour qu'Antoine gagne, il faut que la grenouille puisse être déposer sur un nénuphars $v$ et qu'elle puisse rejoindre un ensemble infini d'autres nénuphars. Mais nous savons que la grenouille pourra rejoindre au maximum les nénuphars de l'ensemble : ${(x, y), min (A_{v+k})< x < max (A_{v+2k}) 1.0}$.
+	\\\hl{détailler bornes ?}
+	
+	\subsection{Arbre binaire}
+	\begin{proposition}
+		 Antoine est gagnant car à la fin de son tour, il peut posséder un nénuphar dans un sous-graphe correspondant à celui du premier tour. La stratégie à adopter est :
+		$$b_n\left\{
+			\begin{array}{ll}
+				 b_n=b_{n-1}*2 + 1 \text {Si} a_n \equiv 0 [b_{n-1}*2 + 2]
+				 b_n=b_{n-1}*2 + 2 \text {Sinon}
+			\end{array}
+			\right.
+			$$
+	\end{proposition}
+	
+	 Commençons par faire un bijection entre un arbre binaire et $\mathbf {N}$ :
+	\begin{figure}[h!]
+		\centering
+		\includegraphics[width=.4\linewidth]{q2/arbre_binaire.png}
+		\caption{Répartition des entiers naturels dans le cas d'un arbre binaire}
+		\label{fig:liste_chainé}
+	\end{figure}
+	
+	 Dans un graphe binaire, chaque noeud $x$ est le parent du noeud $2x+1$ et $2x+2$. Une grenouille sur un noeud $n$ peut théoriquement rejoindre tout les nénuphars suivant :
+	\\$\{v, v \equiv 0 [2x+1]\}\cup \{v, v \equiv 0 [2x+2]\}$.
+	\\Démontrons par récurrence que Antoine peut se retrouver à chaque fin de son tour dans le cas du tour $n=1$ .
+	\subsubsection{Initialisation :}
+	\\Antoine protège le nénuphar à la racine du graphe, il est gagnant car la grenouille peut rejoindre tout les nénuphars. Antoine est donc gagnant au tour $n=1$
+	\subsubsection{Hérédité :}
+	\\Supossons que les ensembles $V_1=\{\forall v, v \equiv 0 [2a_n+1]\}$ et $V_2=\{\forall v, v \equiv 0 [2a_n+2]\}$ sont composé uniquement de nénuphar non-coulé au tour $n=2k+1$,$k\in\mathbf {N}$ et montrons que cela sera toujours le cas à $n=2k+3$.
+	\\Au tour $n=2k+2$, Benoit coule un nénuphar dans une des ensembles $V_1$ ou $V_2$, il ne reste plus qu'un seul ensemble composé uniquement de nénuphars non-coulé.
+	\\Au tour $n=2k+3$, Antoine protège le nénuphars adjacent à son dernier nénuphar protégé et qui fait partis de l'ensemble encore vierge. Nous retrouvons donc pour le tour $n=2k+3$ deux nouveau ensemble dénombrable.
+	\begin{figure}
+		\centering
+		\begin{subfigure}[b]{0.3\textwidth}
+			\centering
+			\input{pb/images/q3/arbre_binaire/arbre1.tex}
+			\caption{$n=2k+1$}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.3\textwidth}
+			\centering
+			\input{pb/images/q3/arbre_binaire/arbre2.tex}
+			\caption{$n=2k+2$}
+		\end{subfigure}
+		\hfill
+		\begin{subfigure}[b]{0.3\textwidth}
+			\centering
+			\input{pb/images/q3/arbre_binaire/arbre3.tex}
+			\caption{$n=2k+3$}
+		\end{subfigure}
+		\caption{Cas d'un graphe binaire}
+		\label{fig:q3 graph bin}
+	\end{figure}
+	
+	
+	
+	
+	\subsection{WIP}
+	\begin{lemme}\label{lemme_antoine_sous_graphe}
+		 Si Antoine peut gagner dans un graphe $H$ qui est un sous graphe de $G$, alors Antoine est aussi gagnant dans $G$.
+	\end{lemme}
+	
+	\begin{lemme}\label{lemme_benoit_sous_graphe}
+		 réciproquement, si Benoit peut gagner dans un graphe $G$, alors Antoine perd dans tout les sous-graphes $H$ inclus dans $G$.
+	\end{lemme}
+	\textbf{Preuve :}
+	\\Nous savons que Benoit est gagnant dans $G$. Nous savons que si Antoine est gagnant dans $H$, sous-graphe de $G$, alors, Benoit est perdant dans $G$. Pour que Benoit soit gagnant dans $G$, il faut donc qu'il le soit dans tout les sous-graphes $H$ de $G$.
+	
+	\begin{lemme}\label{gagner par séparation}
+		 Benoit peut gagner si l'étang peut être décomposer en ensembles finis dont chaque nénuphar possède au plus une seul liaison avec un autre ensemble.
+	\end{lemme}
+	\textbf{Preuve :}
+	\hl{Uniquement si coule nénu fin partie}
+	\\Pour qu'Antoine gagne il faut qu'il puisse protéger une infinité de nénuphars consécutifs ou relier une infinité d'ensembles finis entre eux. Mais nous avons vu dans \ref{separation ensemble} que Antoine ne peux pas relier des ensembles ne partageant pas plus d'une liaison par nénuphar avec d'autre ensemble.
+	\\Comme la grenouille ne pourra rejoindre que des ensemble dénombrable, Benoit est donc gagnant.
+	\\Benoit est gagnant si un graphe peut être séparé en un ensemble de sous-graphe dont les noeuds ne sont relié qu'a un seul autre sous-graphe.
+	
+	
+	
+	\section{Question 2}
+	\textit{Déterminer pour chacun des étangs illustrés figure X si Antoine ou Benoît possède une stratégie gagnante}
+	 Comme le cas $k=1$ est inclus dans chacun des autres graphes, nous ne détaillerons pas plus cette question.
+	
+	\section{Question 3}
+	\textit{Maintenant on suppose qu’une fois qu’Antoine et Benoît ont joué une infinité de fois, tous les nénuphars qui n’ont pas été protégés par Antoine sont coulés. Dans l’exemple présenté au début sur la droite complète, Antoine a donc quand même perdu car les nénuphars protégés sont tous isolés.}
+	
+	
+	\subsection{$k=1$}
+	 Démontrons que la stratégie suivante est gagnante pour Benoit :
+	\\$$b_n\left\{
+		\begin{array}{ll}
+			 b_n=n  \text {Si}\frac{n}{2.0}\equiv 0[2.0]\\
+			 b_n=-n \text {Si}\frac{n}{2.0}\equiv 0[2.0]\\
+		\end{array}
+		\right.
+		$$
+		\\Nous avons donc :
+		\begin{enumerate}
+			\item Chaque nénuphar à droite d'un nénuphar protégé n'est plus vierge.
+			\item Un nénuphar à gauche de deux nénuphar protégé est coulé.
+		\end{enumerate}
+		 Il n'est donc pas possible d'aligner plus de trois nénuphars d'affilé. Benoit est gagnant.
+		
+		\subsection{$k>1$}
+		 Comme l'étang à une hauteur $k$ fixe, il ne peux pas y avoir une infinité de nénuphar en colonne. Antoine devra donc étendre son ensemble de nénuphar par la droite ou par la gauche. Et nous avons vue qu'il ne peux pas se contanter de jouer uniquement en ligne ($k=1$).
+		\\Antoine peut avancer en diagonale comme suit :
+		
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=.3\linewidth]{q3/diagonale.png}
+			\caption{Antoine joue en diagonale}\label{fig:q3 antoine diagonale}
+		\end{figure}
+		
+		 Cependant à chaque déplacement sur l'axe des abscisse, il se déplace aussi sur l'axe des ordonnées.
+		 Il comme il n'est pas possible de changer le sens de la progression tout en gardant un unique ensemble, Antoine est perdant.
+		\begin{figure}[h!]
+			\centering
+			\includegraphics[width=.3\linewidth]{q3/impasse.png}
+			\caption{Antoine joue en diagonale}\label{fig:q3 antoine impasse}
+		\end{figure}
+		
+		
+		
+		\subsection{Pavage d'hexagone}
+		\hl{WIP ajouter ref lemme}
+		\\Voicis un découpage possible de l'étang dans le cas d'un pavage d'hexagone. Benoit est donc gagnant.
+		\begin{figure}{ht!}
+			\centering
+			\resizebox{0.4\textwidth}{!}{
+				\input{pb/images/q3/hexagone/grand}
+			}
+			\caption{Cas d'un pavage d'hexagone}
+			\label{fig:q3 hexagone}
+		\end{figure}\FloatBarrier
+		\textbf{demo que chaque noeud appartient à un unique ensemble denombrable avec une contrainte sur les liaisons ?}
+		
+		
+		\subsection{Pavage de carré}
+		 Dans le cas d'un pavage carré, il est possible de définir des ensembles infini qui possède au plus une liaison entre eux pour chacun de leurs par nénuphars.
+		\begin{figure}{ht!}
+			\centering
+			\resizebox{0.4\textwidth}{!}{
+				\input{pb/images/q3/carré/pavage}
+			}
+			\caption{Cas d'un pavage de carré}
+			\label{fig:q3 hexagone}
+		\end{figure}\FloatBarrier
+		 Nous savons d'après \ref {separation ensemble} que Benoit peut appliquer une stratégie pour éviter qu'Antoine joigne les ensembles. Nous allons aussi montrer que Benoit peut créer un ensemble finit dans les ensembles infinis.
+		
+		
+		
+		\subsection{Pavage de triangle}
+		
+		
+\end{document}

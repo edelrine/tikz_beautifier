@@ -1,6 +1,23 @@
 from utils import *
 from collections import deque
 
+def stripped(token):
+    """return a striped token
+
+    >>> stripped([" test "])
+    [' test ']
+    >>> stripped(" test ")
+    'test'
+    """
+    if isinstance(token, str):
+        if token != "\n" :
+            return token.strip()
+    return token 
+def lstripped(token):
+    if isinstance(token, str) and token != "\n":
+        return lstripped(token)
+    return token 
+
 def space_before(token1, token2):
     """return True if the two token need to be separete with espace"""
     if token1 == None or \
@@ -32,7 +49,7 @@ class MultiDimensionalArray(list):
         """
         list.__init__(self, data)
 
-    def to_string(self, tabulation="    ", expend=False, raw=False):
+    def to_string(self, tabulation="    ", expend=False, raw=False, strip=True):
         """return indented string of the MultiDimensionalArray
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
@@ -63,13 +80,17 @@ class MultiDimensionalArray(list):
                     text += branch(token, deep=deep + 1, last_token=last_token)
                     continue
 
+                if strip:
+                    token = stripped(token)
                 token = repr(token) if raw else str(token)
 
                 if back_to_line:
+                    text = text
                     text += tabulation * deep
                     back_to_line = False
+                    token = token.lstrip()
 
-                if space_before(last_token, token):
+                if strip and space_before(last_token, token):
                     text += " "
 
                 text += token
@@ -105,6 +126,7 @@ class MultiDimensionalArray(list):
         for i in index:
             assert isinstance(elements, list) or 0 <= i < len(elements), "index point out of MultiDimensionalArray"
             elements = elements[i]
+
         return elements
 
     def set_element(self, index, element):
@@ -218,7 +240,7 @@ class MultiDimensionalArray(list):
                 index[0] += index_start[-1]
                 yield [token, Pointer(self, index=index_start[:-1] + index)]
 
-    def filter(self, fct_check, max_element=-1, **args_iter):
+    def filter(self, fct_check, max_element=-1, strip=True, **args_iter):
         """selection a total of max_element when fct_check return true, fct_check is call with in parameter the
         element and his index
 
@@ -231,6 +253,8 @@ class MultiDimensionalArray(list):
         assert callable(fct_check), "fct_check need to be callable"
         selection = []
         for element, index in self.iter_data(**args_iter):
+            if strip: 
+                element = stripped(element)
             if fct_check(element, index):
                 selection.append(Pointer(self, index=index))
                 if len(selection) == max_element:
@@ -350,7 +374,7 @@ class Pointer(list):
         """
         self[::] = index
 
-    def get_element(self):
+    def get_element(self, strip=True):
         """returns the pointed item
         
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
@@ -361,7 +385,10 @@ class Pointer(list):
         >>> p.get_element()
         [2, 3, [4], [5]]
         """
-        return self.mda.get_element(self)
+        element = self.mda.get_element(self)
+        if isinstance(element, list) :
+            return element
+        return stripped(element) if strip else element
 
     def set_element(self, element):
         """set a element at the index position
