@@ -1,7 +1,7 @@
 from utils import *
 from collections import deque
 
-def stripped(token):
+def stripped(token, strip=True):
     """return a striped token
 
     >>> stripped([" test "])
@@ -9,14 +9,18 @@ def stripped(token):
     >>> stripped(" test ")
     'test'
     """
-    if isinstance(token, str):
-        if token != "\n" :
-            return token.strip()
+    if strip :
+        if isinstance(token, str):
+            if token != "\n" :
+                return token.strip()
     return token 
-def lstripped(token):
-    if isinstance(token, str) and token != "\n":
-        return lstripped(token)
-    return token 
+
+def get_path(index):
+    """return path to element to run in exec function
+    
+    >>> 
+    """
+    return "".join([f"[{i}]" for i in index])
 
 def space_before(token1, token2):
     """return True if the two token need to be separete with espace"""
@@ -85,7 +89,6 @@ class MultiDimensionalArray(list):
                 token = repr(token) if raw else str(token)
 
                 if back_to_line:
-                    text = text
                     text += tabulation * deep
                     back_to_line = False
                     token = token.lstrip()
@@ -122,12 +125,14 @@ class MultiDimensionalArray(list):
         """
         assert isinstance(index, list) or isinstance(index, Pointer) or isinstance(index,
                                                                                    tuple), "index must be a list, tuple or Pointer"
-        elements = self
-        for i in index:
-            assert isinstance(elements, list) or 0 <= i < len(elements), "index point out of MultiDimensionalArray"
-            elements = elements[i]
+        # elements = self
+        # for i in index:
+        #     assert isinstance(elements, list) or 0 <= i < len(elements), "index point out of MultiDimensionalArray"
+        #     elements = elements[i]
 
-        return elements
+        command = "return self" + get_path(index)
+        exec(command)
+        # return elements
 
     def set_element(self, index, element):
         """set a new element at the index position
@@ -283,6 +288,8 @@ class MultiDimensionalArray(list):
         assert isinstance(pattern, str), "pattern need to ba a string"
         return self.filter(lambda element, index: re.search(pattern, str(element)), on_node=False, **args)
 
+        
+
     def append(self, index, element, extend=False):
         """append a new element at the index node index
     
@@ -301,7 +308,7 @@ class MultiDimensionalArray(list):
         node = self.get_element(index)
         if not extend:
             element = [element]
-        node[::] = node[::] + element
+        node[::] = [t for t in node] + element
 
     def remove(self, index):
         """append a new element at the index node index
@@ -386,9 +393,9 @@ class Pointer(list):
         [2, 3, [4], [5]]
         """
         element = self.mda.get_element(self)
-        if isinstance(element, list) :
+        if not isinstance(element, str) :
             return element
-        return stripped(element) if strip else element
+        return element.strip() if strip else element
 
     def set_element(self, element):
         """set a element at the index position

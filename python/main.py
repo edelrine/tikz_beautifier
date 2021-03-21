@@ -2,7 +2,7 @@ import time
 import argparse
 import traceback
 from class_latex import *
-from class_multidimensionalarray import * 
+from class_multidimensionalarray import *
 
 def tikz_beautifier(file, multidimensional=False ,**DEFAULT_OPTION):
     """run beautifier from python return (latex result, logs)
@@ -10,12 +10,6 @@ def tikz_beautifier(file, multidimensional=False ,**DEFAULT_OPTION):
     error_log=""
     latex = Latex(file)
     dirpath, filename = os.path.split(os.path.abspath(__file__))
-
-    options = {arg:True for arg in args}
-    for arg, value in kargs:
-        options[arg] = value
-
-    
     def run(fct, error_message, **args):
         nonlocal error_log
         try:
@@ -25,7 +19,7 @@ def tikz_beautifier(file, multidimensional=False ,**DEFAULT_OPTION):
 
 
     def set_colors():
-        if "no_color" in options.keys():
+        if options["no_color"]:
             return
         rgb_to_name = {}
         with open(os.path.join(dirpath, "colors", "rgb_to_name.csv"), "r") as csv_file:
@@ -37,14 +31,14 @@ def tikz_beautifier(file, multidimensional=False ,**DEFAULT_OPTION):
 
 
     def set_clip():
-        if "no_clip" in options.keys():
+        if options["no_clip"]:
             return
         latex.tikz_set_clip(fixed_margin=options["clip_fix"], dynam_margin=options["clip_dyn"])
     run(set_clip, "set clip")
 
 
     def round_digit():
-        if not "round" in options.keys() or int(options["round"]) == 0:
+        if int(options["round"]) == 0:
             return
         latex.round_digit(nb_digit=int(options["round"]))
     run(round_digit, "round digit")
@@ -55,7 +49,7 @@ def tikz_beautifier(file, multidimensional=False ,**DEFAULT_OPTION):
 
 
     def sort_lines():
-        if "no_sort" in options.keys():
+        if options["no_sort"]:
             return
         latex.tikz_sort_line(ordinate_first=options["ordinate_first"],
                              decreasing_abscissa=options["decreasing_abscissa"],
@@ -64,7 +58,7 @@ def tikz_beautifier(file, multidimensional=False ,**DEFAULT_OPTION):
 
 
     def tikz_only():
-        if "tikz_only" in options.keys():
+        if not options["tikz_only"]:
             return
         latex.tikz_only()
     run(tikz_only, "tikz only")
@@ -75,7 +69,7 @@ def tikz_beautifier(file, multidimensional=False ,**DEFAULT_OPTION):
     latex_result = "No result"
     def get_result():
         nonlocal latex_result
-        strip = not 'no_strip' in options.keys() or options['no_strip'] == False
+        strip = options['no_strip'] == False
         latex_result = latex.to_string(tabulation=options["tab"], strip=strip)
     run(get_result, "get result")
     return latex_result, error_log
@@ -83,15 +77,11 @@ def tikz_beautifier(file, multidimensional=False ,**DEFAULT_OPTION):
 
 
 
-def tikz_beautifier_command_line(path_file, *args, **kargs):
+def tikz_beautifier_command_line(path_file, **DEFAULT_OPTION):
     """run beautifier from terminal"""
     TIME_START = time.time()
     error_log = ""
     dirpath, filename = os.path.split(os.path.abspath(__file__))
-
-    options = {arg:True for arg in args}
-    for arg, value in kargs:
-        options[arg] = value
 
     def run(fct, error_message, **args):
         nonlocal error_log
@@ -111,19 +101,19 @@ def tikz_beautifier_command_line(path_file, *args, **kargs):
         return;
 
 
-    latex_result, logs = tikz_beautifier(latex, *args, **kargs)
+    latex_result, logs = tikz_beautifier(latex)
     error_log += logs
 
 
     def show_latex():
-        if "hide" in options.keys():
+        if options["hide"]:
             return
         print(latex_result, "\n")
     run(show_latex, "show result")
 
 
     def save():
-        if "no_save" in options.keys():
+        if options["no_save"]:
             return
         name = path_file.split("/")[-1].split(".")[0]
         file_to_save = "".join([p + "/" for p in path_file.split("/")[:-1]]) + name + "_clear.tikz"
