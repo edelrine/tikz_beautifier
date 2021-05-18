@@ -130,8 +130,8 @@ class MultiDimensionalArray(list):
         #     assert isinstance(elements, list) or 0 <= i < len(elements), "index point out of MultiDimensionalArray"
         #     elements = elements[i]
 
-        command = "return self" + get_path(index)
-        exec(command)
+
+        return eval("self" + get_path(index))
         # return elements
 
     def set_element(self, index, element):

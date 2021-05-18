@@ -40,8 +40,8 @@
 
         <?php 
             if (isset($_POST["tikz"])) {
-                if(strlen($tikz) > 4000){
-                    echo '<h2 class="error"><br />Sorry your code is more than 4000 characters long, use the off-line version of our <a href="nortegithub">github</a>!</h2>';
+                if(strlen($tikz) > 40000){
+                    echo '<h2 class="error"><br />Sorry your code is more than 40000 characters long, use the off-line version of our <a href="https://github.com/Louis-max-H/tikz_beautifier">github</a>!</h2>';
                 }else{
                     $start_time = microtime(true); 
                     $tikz_file = fopen("./tikz_to_convert", "w+");

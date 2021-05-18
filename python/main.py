@@ -4,20 +4,21 @@ import traceback
 from class_latex import *
 from class_multidimensionalarray import *
 
-def tikz_beautifier(file, multidimensional=False ,**DEFAULT_OPTION):
-    """run beautifier from python return (latex result, logs)
-    set multidimensional=True if you want to get only multidensional array"""
+def tikz_beautifier(file, multidimensional=False ,**options):
+    """run beautifier from python
+    return (latex result, logs)
+    set multidimensional=True if you want to get the multidensional array and not the formatted string"""
     error_log=""
     latex = Latex(file)
     dirpath, filename = os.path.split(os.path.abspath(__file__))
-    def run(fct, error_message, **args):
+    def run(fct, **args):
         nonlocal error_log
         try:
             return fct(**args)
         except:
-            error_log += "["+error_message+"]" +"\n" + traceback.format_exc() + "\n"
+            error_log += "["+fct.__name__+"]" +"\n" + traceback.format_exc() + "\n"
 
-
+    @run
     def set_colors():
         if options["no_color"]:
             return
@@ -27,91 +28,96 @@ def tikz_beautifier(file, multidimensional=False ,**DEFAULT_OPTION):
             for row in csv_reader:
                 rgb_to_name[row[0]] = [int(row[1]), int(row[2]), int(row[3])]
         latex.rename_colors(rgb_to_name)
-    run(set_colors, "set colors")
+
+    @run
+    def show_source():
+        if options["show_source"]:
+            print("source :")
+            print(file)
+            print()
 
 
+    @run
     def set_clip():
         if options["no_clip"]:
             return
         latex.tikz_set_clip(fixed_margin=options["clip_fix"], dynam_margin=options["clip_dyn"])
-    run(set_clip, "set clip")
 
 
+    @run
     def round_digit():
         if int(options["round"]) == 0:
             return
         latex.round_digit(nb_digit=int(options["round"]))
-    run(round_digit, "round digit")
 
     latex.tikz_sort_line(ordinate_first=options["ordinate_first"],
                              decreasing_abscissa=options["decreasing_abscissa"],
                              decreasing_ordinate=options["decreasing_ordinate"])
 
 
+    @run
     def sort_lines():
         if options["no_sort"]:
             return
         latex.tikz_sort_line(ordinate_first=options["ordinate_first"],
                              decreasing_abscissa=options["decreasing_abscissa"],
                              decreasing_ordinate=options["decreasing_ordinate"])
-    run(sort_lines, "sort lines")
 
 
+    @run
     def tikz_only():
         if not options["tikz_only"]:
             return
         latex.tikz_only()
-    run(tikz_only, "tikz only")
 
     if multidimensional:
         return latex, error_log
 
     latex_result = "No result"
+    @run
     def get_result():
         nonlocal latex_result
         strip = options['no_strip'] == False
         latex_result = latex.to_string(tabulation=options["tab"], strip=strip)
-    run(get_result, "get result")
     return latex_result, error_log
 
 
 
 
-def tikz_beautifier_command_line(path_file, **DEFAULT_OPTION):
+def tikz_beautifier_command_line(path_file, **options):
     """run beautifier from terminal"""
     TIME_START = time.time()
     error_log = ""
     dirpath, filename = os.path.split(os.path.abspath(__file__))
 
-    def run(fct, error_message, **args):
+    def run(fct, **args):
         nonlocal error_log
         try:
             return fct(**args)
         except:
-            error_log += "["+error_message+"]" +"\n" + traceback.format_exc() + "\n"
+            error_log += "["+fct.__name__+"]" +"\n" + traceback.format_exc() + "\n"
 
 
+    @run
     def open_file():
         with open(path_file, "r") as file:
             return "".join(file.read())
-    latex = run(open_file, "Open file") 
+    latex = open_file 
 
     if latex == []:
         error += "[Open file] :\nParsed file is empty.\n"
         return;
 
-
-    latex_result, logs = tikz_beautifier(latex)
+    latex_result, logs = tikz_beautifier(latex, **options)
     error_log += logs
 
-
+    @run
     def show_latex():
         if options["hide"]:
             return
         print(latex_result, "\n")
-    run(show_latex, "show result")
 
-
+    @run
     def save():
         if options["no_save"]:
             return
@@ -120,7 +126,6 @@ def tikz_beautifier_command_line(path_file, **DEFAULT_OPTION):
         with open(file_to_save, 'w+') as d:
             d.write(latex_result)
         print("file save as", file_to_save)
-    run(save, "save file")
 
 
     if error_log != "":
@@ -132,7 +137,6 @@ def tikz_beautifier_command_line(path_file, **DEFAULT_OPTION):
     def save_error_log():
         with open(os.path.join(dirpath, "tikz_beautifier.log"), 'w+') as d:
             d.write(error_log)
-    run(save_error_log, "save error log")
 
     print("End in", round(time.time() - TIME_START, 4), "s")
 
@@ -152,6 +156,7 @@ if __name__ == '__main__':
     parser.add_argument('-no-save', help="dont saves in the same location as the source", action='store_true')
     parser.add_argument("-hide", help="dont show the result in the terminal", action='store_true')
     parser.add_argument("-no-sort", help="dont sort \\drawn", action='store_true')
+    parser.add_argument("-show-source", "-ss", help="show source from input", action='store_true')
     parser.add_argument("-ordinate-first", "-of", help="sort the blocks by ordinate then by abscissa",
                         action='store_true')
     parser.add_argument("-decreasing-abscissa", "-da", help="sorted abscissa in decreasing order", action='store_true')
@@ -166,7 +171,5 @@ if __name__ == '__main__':
     parser.add_argument("-no-strip", "-ns", help="keep extra spaces", action='store_true')
 
     args = parser.parse_args()
-    options = {}
-    for keys, value in vars(args).items():
-        options[keys] = value
+    options = {keys : value for keys, value in vars(args).items()}
     tikz_beautifier_command_line(options["path"], **options)
