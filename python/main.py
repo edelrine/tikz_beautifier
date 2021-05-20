@@ -10,6 +10,7 @@ def tikz_beautifier(file, multidimensional=False ,**options):
     set multidimensional=True if you want to get the multidensional array and not the formatted string"""
     error_log=""
     latex = Latex(file)
+    print("latex :", latex)
     dirpath, filename = os.path.split(os.path.abspath(__file__))
     def run(fct, **args):
         nonlocal error_log
@@ -20,55 +21,57 @@ def tikz_beautifier(file, multidimensional=False ,**options):
 
     @run
     def set_colors():
-        if options["no_color"]:
-            return
         rgb_to_name = {}
         with open(os.path.join(dirpath, "colors", "rgb_to_name.csv"), "r") as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for row in csv_reader:
                 rgb_to_name[row[0]] = [int(row[1]), int(row[2]), int(row[3])]
         latex.rename_colors(rgb_to_name)
+    if not options["no_color"]:
+        set_colors
+
+
 
     @run
     def show_source():
-        if options["show_source"]:
             print("source :")
             print(file)
             print()
+    if not options["hide_source"]:
+        show_source
+
 
 
     @run
     def set_clip():
-        if options["no_clip"]:
-            return
         latex.tikz_set_clip(fixed_margin=options["clip_fix"], dynam_margin=options["clip_dyn"])
+    if options["no_clip"]:
+        set_clip
+
 
 
     @run
     def round_digit():
-        if int(options["round"]) == 0:
-            return
         latex.round_digit(nb_digit=int(options["round"]))
-
-    latex.tikz_sort_line(ordinate_first=options["ordinate_first"],
-                             decreasing_abscissa=options["decreasing_abscissa"],
-                             decreasing_ordinate=options["decreasing_ordinate"])
+    if int(options["round"]) != 0:
+        round_digit
 
 
     @run
     def sort_lines():
-        if options["no_sort"]:
-            return
         latex.tikz_sort_line(ordinate_first=options["ordinate_first"],
                              decreasing_abscissa=options["decreasing_abscissa"],
                              decreasing_ordinate=options["decreasing_ordinate"])
+    if not options["no_sort"]:
+        sort_lines
 
 
     @run
     def tikz_only():
-        if not options["tikz_only"]:
-            return
         latex.tikz_only()
+    if options["tikz_only"]:
+        tikz_only
+
 
     if multidimensional:
         return latex, error_log
@@ -79,8 +82,8 @@ def tikz_beautifier(file, multidimensional=False ,**options):
         nonlocal latex_result
         strip = options['no_strip'] == False
         latex_result = latex.to_string(tabulation=options["tab"], strip=strip)
+    get_result
     return latex_result, error_log
-
 
 
 
@@ -96,13 +99,14 @@ def tikz_beautifier_command_line(path_file, **options):
             return fct(**args)
         except:
             error_log += "["+fct.__name__+"]" +"\n" + traceback.format_exc() + "\n"
-
+            return None
 
     @run
     def open_file():
         with open(path_file, "r") as file:
             return "".join(file.read())
-    latex = open_file 
+    latex = open_file
+
 
     if latex == []:
         error += "[Open file] :\nParsed file is empty.\n"
@@ -112,20 +116,20 @@ def tikz_beautifier_command_line(path_file, **options):
     error_log += logs
 
     @run
-    def show_latex():
-        if options["hide"]:
-            return
+    def show_result():
         print(latex_result, "\n")
+    if not options["hide_output"]:
+        show_result
 
     @run
     def save():
-        if options["no_save"]:
-            return
         name = path_file.split("/")[-1].split(".")[0]
         file_to_save = "".join([p + "/" for p in path_file.split("/")[:-1]]) + name + "_clear.tikz"
         with open(file_to_save, 'w+') as d:
             d.write(latex_result)
         print("file save as", file_to_save)
+    if options["no_save"]:
+        save
 
 
     if error_log != "":
@@ -133,10 +137,11 @@ def tikz_beautifier_command_line(path_file, **options):
         error_log += "Log make at : " + str( time.strftime("%H:%M:%S", t)) + "\n"
         print("\n Error :",error_log,"\n\n")
 
-
+    @run
     def save_error_log():
         with open(os.path.join(dirpath, "tikz_beautifier.log"), 'w+') as d:
             d.write(error_log)
+    save_error_log
 
     print("End in", round(time.time() - TIME_START, 4), "s")
 
@@ -154,9 +159,12 @@ if __name__ == '__main__':
                         default=3)
     parser.add_argument('-no-color', help="dont gives a name to colors", action='store_true')
     parser.add_argument('-no-save', help="dont saves in the same location as the source", action='store_true')
-    parser.add_argument("-hide", help="dont show the result in the terminal", action='store_true')
+
+    parser.add_argument("-hide-output", "-ho", help="dont show the result in the terminal", action='store_true')
+    parser.add_argument("-hide-source", "-hs", help="show source from input", action='store_true')
+
+
     parser.add_argument("-no-sort", help="dont sort \\drawn", action='store_true')
-    parser.add_argument("-show-source", "-ss", help="show source from input", action='store_true')
     parser.add_argument("-ordinate-first", "-of", help="sort the blocks by ordinate then by abscissa",
                         action='store_true')
     parser.add_argument("-decreasing-abscissa", "-da", help="sorted abscissa in decreasing order", action='store_true')

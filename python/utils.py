@@ -19,6 +19,13 @@ def is_float(token) :
     except :
         return False
 
+def is_int(token) :
+    """check if the token can be convert in int"""
+    try :
+        return float(token).is_integer()
+    except :
+        return False
+
 def get_color_name(data_colors,red,green,blue) :
     """return a color name corresponding to the r,g,b"""
     minn = float("inf")

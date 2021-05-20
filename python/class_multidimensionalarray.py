@@ -3,11 +3,11 @@ from collections import deque
 
 def stripped(token, strip=True):
     """return a striped token
-
-    >>> stripped([" test "])
-    [' test ']
+    
     >>> stripped(" test ")
     'test'
+    >>> stripped([" test "])
+    [' test ']
     """
     if strip :
         if isinstance(token, str):
@@ -22,20 +22,18 @@ def get_path(index):
     """
     return "".join([f"[{i}]" for i in index])
 
-def space_before(token1, token2):
+def space_beetwen(token1, token2):
     """return True if the two token need to be separete with espace"""
     if token1 == None or \
-            token1 in "{([" or \
-            token2 in "})],." or \
+            token1 in ("--", ",", ".") or \
+            token2 in ("--") or \
             token1 == "\\begin" or \
             token1[0] == "\\" or \
             token1[-1] == "=" or \
             token2[0] == "=":
         return False
 
-    return token1 == "--" or \
-           token2 == "--" or \
-           token1[-1].isalpha() or \
+    return token1[-1].isalpha() or \
            token2[0].isalpha() or \
            token1[-1].isdigit() or \
            token2[0].isdigit()
@@ -93,7 +91,7 @@ class MultiDimensionalArray(list):
                     back_to_line = False
                     token = token.lstrip()
 
-                if strip and space_before(last_token, token):
+                if strip and space_beetwen(last_token, token):
                     text += " "
 
                 text += token

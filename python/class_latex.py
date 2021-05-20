@@ -12,11 +12,12 @@ class Latex(MultiDimensionalArray):
         Latex class, is tolerant to alone close bracket and will avoid them,
         Alone open bracket will create new node.
 
-        >>> latex = Latex("\\documentclass[10pt]{article}\\n\\\\begin{document}\\n\\section{A section}\\n\\end{document}")
+        >>> latex = Latex("\\documentclass[10.3pt]{article}\\n\\\\begin{document}\\n\\section{A section}\\n\\end{document}")
         >>> latex
-        ['\\\\documentclass', '[', ['1', '0pt'], ']', '{', ['article'], '}', '\\n', '\\\\begin', ['{', ['document'], '}', '\\n', '\\\\section', '{', ['A section'], '}', '\\n'], '\\\\end', '{', ['document'], '}']
+        ['\\\\documentclass', '[', ['10.3pt'], ']', '{', ['article'], '}', '\\n', '\\\\begin', ['{', ['document'], '}', '\\n', '\\\\section', '{', ['A section'], '}', '\\n'], '\\\\end', '{', ['document'], '}']
         """
-        REGEX_SPLIT_DATA = r"(\[|\]|\(|\)|\{|\}|,|\n|=|\dcm|\dpt)"
+        REGEX_FLAOT = "[-+]?\d*\.*\d+"
+        REGEX_SPLIT_DATA = r"(\[|\]|\(|\)|\{|\}|,|\n|=|"+REGEX_FLAOT+"cm|"+REGEX_FLAOT+"pt)"
         BRACKET_OPEN = ("(", "[", "{", "\\begin")
         BRACKET_CLOSE = (")", "]", "}", "\\end")
         BRACKET_INVERSE = {}
@@ -63,9 +64,8 @@ class Latex(MultiDimensionalArray):
         ...         rgb_to_name[row[0]] = [int(row[1]),int(row[2]),int(row[3])]
         >>> latex.rename_colors(rgb_to_name)
         >>> latex
-        ['\\\\definecolor', '{', ['black'], '}', '{', ['rgb'], '}', '{', ['0.3', ',', '0.3', ',', '1'], '}', 'and I use black color !']
+        ['\\\\definecolor', '{', ['Neon_Blue'], '}', '{', ['rgb'], '}', '{', ['0.3', ',', '0.3', ',', '1'], '}', 'and I use Neon_Blue color !']
         """
-        # \definecolor{ududff}{rgb}{0.3,0.3,1}
 
         for pointer in self.search("\\definecolor"):
             # pointer = Pointer(pointer_color_name)
@@ -92,16 +92,24 @@ class Latex(MultiDimensionalArray):
     def round_digit(self, index_start=None, nb_digit=2):
         """Round float in the latex file
         
-        >>> latex = Latex('\\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}')
+        >>> latex = Latex('\\definecolor{ududff}{rgb}{0.30196078431372547,1,1.000}')
         >>> latex.round_digit()
         >>> latex
-        ['\\\\definecolor', '{', ['ududff'], '}', '{', ['rgb'], '}', '{', [0.3, ',', 0.3, ',', 1.0], '}']
+        ['\\\\definecolor', '{', ['ududff'], '}', '{', ['rgb'], '}', '{', [0.3, ',', 1, ',', 1], '}']
         """
         if index_start is None:
             index_start = [0]
-        for pointer in self.filter(lambda element, index: is_float(element), index_start=index_start):
-            flt = round(float(pointer.get_element()), nb_digit)
-            pointer.set_element(flt)
+        for pointer in self.filter(
+                lambda element, index: 
+                    is_float(element),
+                index_start=index_start
+            ):
+            token = float(pointer.get_element())
+            pointer.set_element(
+                int(token)
+                if is_int(token)
+                else round(float(token), nb_digit)
+            )
 
     def get_tikz(self):
         """return a pointer for all tikz contain in latex
@@ -134,7 +142,7 @@ class Latex(MultiDimensionalArray):
         >>> latex.tikz_set_clip()
         >>> latex.round_digit()
         >>> latex
-        ['\\\\draw', '[', ['color', '=', 'black'], ']', '(', [-4.0, ',', 4.0], ')', 'node', '{', ['$A$'], '}', ';', '\\n', '\\\\clip', '(', [-5.05, ',', 2.3], ')', 'rectangle', '(', [-1.95, ',', -2.3], ')', '\\n', '\\\\draw', '[', ['color', '=', 'Neon_Blue'], ']', '(', [-3.0, ',', 3.0], ')', 'node', '{', ['$B$'], '}', ';', '\\n', '\\\\draw', '[', ['fill', '=', 'Neon_Blue'], ']', '(', [9.0, ',', 9.0], ')', 'circle', '(', ['2pt'], ')', ';']
+        ['\\\\draw', '[', ['color', '=', 'black'], ']', ' ', '(', [-4, ',', 4], ')', ' node ', '{', ['$A$'], '}', ';', '\\n', '\\\\draw', '[', ['color', '=', 'Neon_Blue'], ']', ' ', '(', [-3, ',', 3], ')', ' node ', '{', ['$B$'], '}', ';', '\\n', '\\\\draw', '[', ['fill', '=', 'Neon_Blue'], ']', ' ', '(', [9, ',', 9], ')', ' circle ', '(', ['2pt'], ')', '\\n', '\\\\clip', '(', [-5.65, ',', 1.7], ')', 'rectangle', '(', [10.65, ',', 10.3], ')', ';']
         """
 
         if index_start == None:
@@ -192,7 +200,7 @@ class Latex(MultiDimensionalArray):
                        decreasing_ordinate=False):
         """sorting by coordinates
 
-        We start with point place like this :
+        We start with point placed like this :
         A B
         C D
 
@@ -267,8 +275,9 @@ class Latex(MultiDimensionalArray):
         tikzs = [tikz for tikz in self.get_tikz()]
         self = tikzs[n].get_element()
 
+
 if __name__ == '__main__':
     import doctest
-    # doctest.testmod()
-    doctest.run_docstring_examples(Latex.get_tikz, globals())
+    doctest.testmod()
+    # doctest.run_docstring_examples(Latex.get_tikz, globals())
 
