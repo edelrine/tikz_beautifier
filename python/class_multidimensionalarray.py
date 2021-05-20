@@ -77,7 +77,7 @@ class MultiDimensionalArray(list):
         """
         list.__init__(self, data)
 
-    def to_string(self, tabulation="    ", expend=False, raw=False, strip=True):
+    def to_string(self, tabulation="    ", expend=False, strip=True):
         """return indented string of the MultiDimensionalArray
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
@@ -106,11 +106,15 @@ class MultiDimensionalArray(list):
             for token in branch_data:
                 if isinstance(token, list):
                     text += branch(token, deep=deep + 1, previous_token=previous_token)
+
+                    #remove empty line of the child
+                    if text.split("\n")[-1:] and text.split("\n")[-1].rstrip() == "":
+                        text = text.rstrip() + "\n"
+                        back_to_line = True
                     continue
 
-                if strip:
-                    token = stripped(token)
-                token = repr(token) if raw else str(token)
+                token = str(token)
+                if strip : token = stripped(token)
 
                 if back_to_line:
                     text += tabulation * deep
@@ -130,7 +134,6 @@ class MultiDimensionalArray(list):
                 previous_token = token
 
             return text
-
         return branch(self).rstrip()
 
     def get_element(self, index):

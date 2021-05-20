@@ -10,7 +10,6 @@ def tikz_beautifier(file, multidimensional=False ,**options):
     set multidimensional=True if you want to get the multidensional array and not the formatted string"""
     error_log=""
     latex = Latex(file)
-    print("latex :", latex)
     dirpath, filename = os.path.split(os.path.abspath(__file__))
     def run(fct, **args):
         nonlocal error_log
@@ -31,7 +30,6 @@ def tikz_beautifier(file, multidimensional=False ,**options):
         set_colors
 
 
-
     @run
     def show_source():
             print("source :")
@@ -39,7 +37,6 @@ def tikz_beautifier(file, multidimensional=False ,**options):
             print()
     if not options["hide_source"]:
         show_source
-
 
 
     @run
@@ -147,36 +144,86 @@ def tikz_beautifier_command_line(path_file, **options):
 
 
 
-
 if __name__ == '__main__':
     #extract command line parameters, see tikz_beautifier_command_line or tikz_beautifier for main code
-    parser = argparse.ArgumentParser(description="Formats a Tikz code",
-                                     formatter_class=argparse.ArgumentDefaultsHelpFormatter)
-    parser.add_argument('path', type=str, help="the path of the file to convert")
-    parser.add_argument('-tab', type=str, help="the tabulation you want", default="\t")
-    parser.add_argument('-round', type=int,
-                        help="round to ndigits precision after the decimal point, set -1 if you didn't want to round number",
-                        default=3)
-    parser.add_argument('-no-color', help="dont gives a name to colors", action='store_true')
-    parser.add_argument('-no-save', help="dont saves in the same location as the source", action='store_true')
+    parser = argparse.ArgumentParser(
+        prog="Tikz Beautifier",
+        description="Formats a Tikz code",
+        formatter_class=argparse.ArgumentDefaultsHelpFormatter,
+        epilog="Enjoy !"
+    )
 
-    parser.add_argument("-hide-output", "-ho", help="dont show the result in the terminal", action='store_true')
-    parser.add_argument("-hide-source", "-hs", help="show source from input", action='store_true')
+    #required 
+    parser.add_argument('path', 
+        type=str, 
+        help="the path of the file to convert")
 
 
-    parser.add_argument("-no-sort", help="dont sort \\drawn", action='store_true')
-    parser.add_argument("-ordinate-first", "-of", help="sort the blocks by ordinate then by abscissa",
-                        action='store_true')
-    parser.add_argument("-decreasing-abscissa", "-da", help="sorted abscissa in decreasing order", action='store_true')
-    parser.add_argument("-decreasing-ordinate", "-do", help="sorted ordinate in decreasing order", action='store_true')
-    parser.add_argument("-by-type", help="separates blocks by category (circle, line, rectangle, etc...)",
-                        action='store_true')
-    parser.add_argument("-no-clip", help="dont set automatic clip", action='store_true')
-    parser.add_argument("-clip-fix", type=float, help="specifies a fixed margin", default="1")
-    parser.add_argument("-clip-dyn", type=float, help="specifies a dynamic margin (%)", default="0.1")
-    parser.add_argument("-tikz-only", "-to", help="remove Latex default importation", action='store_true')
+    formatting = parser.add_argument_group(title="Formatting")
+    formatting.add_argument('-tab', 
+        type=str, 
+        help="the tabulation you want", default="\t")
+    formatting.add_argument("-tikz-only", "-to",
+        help="remove Latex default importation",
+        action='store_true')
+    formatting.add_argument("-no-strip", "-ns",
+        help="keep extra spaces",
+        action='store_true')
 
-    parser.add_argument("-no-strip", "-ns", help="keep extra spaces", action='store_true')
+
+    clean_up = parser.add_argument_group(title="Clean up")
+    clean_up.add_argument('-round',
+        type=int,
+        help="round to ndigits precision after the decimal point, set -1 if you didn't want to round number",
+        default=3)
+    clean_up.add_argument('-no-color',
+        help="dont gives a name to colors",
+        action='store_true')
+
+    CLI = parser.add_argument_group(title="Commande line settings")
+    CLI.add_argument('-v',
+        help="level of debugging, -v to -vvv",
+        action='count',
+        default="0")
+    CLI.add_argument('-no-save',
+        help="dont saves in the same location as the source",
+        action='store_true')
+    CLI.add_argument("-hide-source", "-hs",
+        help="show source from input",
+        action='store_true')
+    CLI.add_argument("-hide-output", "-ho",
+        help="dont show the result in the terminal",
+        action='store_true')
+
+    sorting = parser.add_argument_group(title="Sorting")
+    sorting.add_argument("-no-sort",
+        help="dont sort \\drawn",
+        action='store_true')
+    sorting.add_argument("-bytype",
+        help="separates blocks by category (circle, line, rectangle, etc...)",
+        action='store_true')
+    sorting.add_argument("-ordinate-first", "-of",
+        help="sort the blocks by ordinate then by abscissa",
+        action='store_true')
+    sorting.add_argument("-decreasing-abscissa", "-da",
+        help="sorted abscissa in decreasing order",
+        action='store_true')
+    sorting.add_argument("-decreasing-ordinate", "-do",
+        help="sorted ordinate in decreasing order",
+        action='store_true')
+
+    clipping = parser.add_argument_group(title="Clipping")
+    clipping.add_argument("-no-clip",
+        help="dont set automatic clip",
+        action='store_true')
+    clipping.add_argument("-clip-fix",
+        type=float,
+        help="specifies a fixed margin",
+        default="1")
+    clipping.add_argument("-clip-dyn",
+        type=float,
+        help="specifies a dynamic margin, in percent",
+        default="0.1")
 
     args = parser.parse_args()
     options = {keys : value for keys, value in vars(args).items()}
