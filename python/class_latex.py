@@ -51,7 +51,6 @@ class Latex(MultiDimensionalArray):
         pointer.remove()  # remove ""
 
         super(Latex, self).__init__(latex)
-        print(self)
 
     def rename_colors(self, data_colors):
         """rename all colors contains in the document with more explicite name

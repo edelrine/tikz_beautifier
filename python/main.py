@@ -1,148 +1,128 @@
 import time
+import logging 
 import argparse
 import traceback
 from class_latex import *
 from class_multidimensionalarray import *
+dirpath, filename = os.path.split(os.path.abspath(__file__))
+logging.basicConfig(
+    level=logging.DEBUG,
+    format="[%(levelname)s] %(message)s",
+    handlers=[
+        logging.FileHandler("debug.log"),
+        logging.StreamHandler()
+    ]
+)
+
+
+def run(fct, condition, *args, **kargs):
+    try:
+        if condition :
+            logging.debug("Starting "+fct.__name__)
+            return fct(*args, **kargs)
+        else :
+            logging.debug("Passing "+fct.__name__)
+            return None
+    except:
+        logging.exception("["+fct.__name__+"]")
+        return None
 
 def tikz_beautifier(file, multidimensional=False ,**options):
     """run beautifier from python
-    return (latex result, logs)
+    return the latex string or the multidimensional object of set to true
     set multidimensional=True if you want to get the multidensional array and not the formatted string"""
-    error_log=""
-    latex = Latex(file)
+    LOCALTIME = time.localtime()
     dirpath, filename = os.path.split(os.path.abspath(__file__))
-    def run(fct, **args):
-        nonlocal error_log
-        try:
-            return fct(**args)
-        except:
-            error_log += "["+fct.__name__+"]" +"\n" + traceback.format_exc() + "\n"
+    logging.debug("Start from function at"+str(time.asctime(LOCALTIME)))
+    logging.debug("Dirpath : "+str(dirpath)+" filename "+str(filename))
 
-    @run
-    def set_colors():
+    logging.info("Generating Latex file")
+    latex = Latex(file)
+
+
+    def set_colors(latex):
         rgb_to_name = {}
         with open(os.path.join(dirpath, "colors", "rgb_to_name.csv"), "r") as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for row in csv_reader:
                 rgb_to_name[row[0]] = [int(row[1]), int(row[2]), int(row[3])]
         latex.rename_colors(rgb_to_name)
-    if not options["no_color"]:
-        set_colors
+    run(set_colors, not options["no_color"], latex)
 
 
-    @run
-    def show_source():
-            print("source :")
-            print(file)
-            print()
-    if not options["hide_source"]:
-        show_source
+    def show_source(file):
+        logging.info("source :\n"+str(file)+"\n")
+    run(show_source, not options["hide_source"], file)
 
 
-    @run
-    def set_clip():
+    def set_clip(latex, options):
         latex.tikz_set_clip(fixed_margin=options["clip_fix"], dynam_margin=options["clip_dyn"])
-    if options["no_clip"]:
-        set_clip
+    run(set_clip, options["no_clip"], latex, options)
 
-
-
-    @run
-    def round_digit():
+    
+    def round_digit(latex, options):
         latex.round_digit(nb_digit=int(options["round"]))
-    if int(options["round"]) != 0:
-        round_digit
+    run(round_digit, int(options["round"]) != 0, latex, options)
 
-
-    @run
-    def sort_lines():
+    
+    def sort_lines(latex, options):
         latex.tikz_sort_line(ordinate_first=options["ordinate_first"],
                              decreasing_abscissa=options["decreasing_abscissa"],
                              decreasing_ordinate=options["decreasing_ordinate"])
-    if not options["no_sort"]:
-        sort_lines
+    run(sort_lines, not options["no_sort"], latex, options)
 
 
-    @run
-    def tikz_only():
+    def tikz_only(latex, options):
         latex.tikz_only()
-    if options["tikz_only"]:
-        tikz_only
+    run(tikz_only, options["tikz_only"], latex, options)
 
 
     if multidimensional:
-        return latex, error_log
+        return latex
 
-    latex_result = "No result"
-    @run
-    def get_result():
-        nonlocal latex_result
+    def get_result(latex, options):
         strip = options['no_strip'] == False
-        latex_result = latex.to_string(tabulation=options["tab"], strip=strip)
-    get_result
-    return latex_result, error_log
+        return latex.to_string(tabulation=options["tab"], strip=strip)
+    return run(get_result, True, latex, options)
 
 
 
 def tikz_beautifier_command_line(path_file, **options):
     """run beautifier from terminal"""
-    TIME_START = time.time()
-    error_log = ""
+    LOCALTIME = time.localtime()
     dirpath, filename = os.path.split(os.path.abspath(__file__))
+    logging.debug("Start from command line at"+str(time.asctime(LOCALTIME)))
+    logging.debug("Dirpath : "+str(dirpath)+" filename "+str(filename))
 
-    def run(fct, **args):
-        nonlocal error_log
-        try:
-            return fct(**args)
-        except:
-            error_log += "["+fct.__name__+"]" +"\n" + traceback.format_exc() + "\n"
-            return None
-
-    @run
-    def open_file():
+    
+    def open_file(path_file):
         with open(path_file, "r") as file:
             return "".join(file.read())
-    latex = open_file
-
+    latex = run(open_file, True, path_file)
 
     if latex == []:
-        error += "[Open file] :\nParsed file is empty.\n"
-        return;
+        logging.warning("[Open file] :\nParsed file is empty.\n")
+        return None
 
-    latex_result, logs = tikz_beautifier(latex, **options)
-    error_log += logs
+    latex_result = run(tikz_beautifier,True, latex, **options)
+    if latex_result == None:
+        logging.warning("latex_result is empty")
+        return None
 
-    @run
-    def show_result():
-        print(latex_result, "\n")
-    if not options["hide_output"]:
-        show_result
+    def show_result(latex_result):
+        logging.info(str(latex_result) + "\n")
+    run(show_result, not options["hide_output"], latex_result)
 
-    @run
-    def save():
+    
+    def save(path_file):
         name = path_file.split("/")[-1].split(".")[0]
         file_to_save = "".join([p + "/" for p in path_file.split("/")[:-1]]) + name + "_clear.tikz"
         with open(file_to_save, 'w+') as d:
             d.write(latex_result)
-        print("file save as", file_to_save)
-    if options["no_save"]:
-        save
+        logging.info("file save as" + str(file_to_save))
+    run(save, options["no_save"], path_file)
 
-
-    if error_log != "":
-        t = time.localtime()
-        error_log += "Log make at : " + str( time.strftime("%H:%M:%S", t)) + "\n"
-        print("\n Error :",error_log,"\n\n")
-
-    @run
-    def save_error_log():
-        with open(os.path.join(dirpath, "tikz_beautifier.log"), 'w+') as d:
-            d.write(error_log)
-    save_error_log
-
-    print("End in", round(time.time() - TIME_START, 4), "s")
-
-
+    logging.debug("End at "+str(time.asctime(LOCALTIME))+"s")
 
 if __name__ == '__main__':
     #extract command line parameters, see tikz_beautifier_command_line or tikz_beautifier for main code
