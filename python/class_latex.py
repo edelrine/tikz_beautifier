@@ -16,8 +16,8 @@ class Latex(MultiDimensionalArray):
         >>> latex
         ['\\\\documentclass', '[', ['10.3pt'], ']', '{', ['article'], '}', '\\n', '\\\\begin', ['{', ['document'], '}', '\\n', '\\\\section', '{', ['A section'], '}', '\\n'], '\\\\end', '{', ['document'], '}']
         """
-        REGEX_FLAOT = "[-+]?\d*\.*\d+"
-        REGEX_SPLIT_DATA = r"(\[|\]|\(|\)|\{|\}|,|\n|=|"+REGEX_FLAOT+"cm|"+REGEX_FLAOT+"pt)"
+        REGEX_FLAOT = "\b[-+]?\d*\.*\d+"
+        REGEX_SPLIT_DATA = r"(\[|\]|\(|\)|\{|\}|,|\n|=|"+REGEX_FLAOT+")"
         BRACKET_OPEN = ("(", "[", "{", "\\begin")
         BRACKET_CLOSE = (")", "]", "}", "\\end")
         BRACKET_INVERSE = {}
@@ -68,7 +68,6 @@ class Latex(MultiDimensionalArray):
         """
 
         for pointer in self.search("\\definecolor"):
-            # pointer = Pointer(pointer_color_name)
             pointer.next_node()  # old
             old_name = pointer.get_element()[0]
 

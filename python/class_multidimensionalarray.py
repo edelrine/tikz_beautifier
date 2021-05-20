@@ -1,7 +1,7 @@
 from utils import *
 from collections import deque
 
-def stripped(token, strip=True):
+def stripped(token):
     """return a striped token
     
     >>> stripped(" test ")
@@ -9,34 +9,60 @@ def stripped(token, strip=True):
     >>> stripped([" test "])
     [' test ']
     """
-    if strip :
-        if isinstance(token, str):
-            if token != "\n" :
-                return token.strip()
+    if isinstance(token, str) and token != "\n":
+        return token.strip()
     return token 
 
 def get_path(index):
     """return path to element to run in exec function
     
-    >>> 
+    >>> get_path([0,1])
+    '[0][1]'
+    >>> array = [['a','b'], ['c', 'd']]
     """
     return "".join([f"[{i}]" for i in index])
 
-def space_beetwen(token1, token2):
+def space_beetwen(last, new):
     """return True if the two token need to be separete with espace"""
-    if token1 == None or \
-            token1 in ("--", ",", ".") or \
-            token2 in ("--") or \
-            token1 == "\\begin" or \
-            token1[0] == "\\" or \
-            token1[-1] == "=" or \
-            token2[0] == "=":
+    OPEN = ("(","[","{")
+    CLOSE= (")","]","}")
+
+    if last==None:return False
+
+    if True in (#without space
+        #opened brackets before
+        last.endswith((
+            *OPEN,
+            "\\",
+            "=")),
+        #closing bracket after
+        new.startswith((
+            *CLOSE,
+            "=")),
+        #no space beetwen command and parameters
+        last.startswith("\\") and new.startswith(OPEN)
+        ):
         return False
 
-    return token1[-1].isalpha() or \
-           token2[0].isalpha() or \
-           token1[-1].isdigit() or \
-           token2[0].isdigit()
+    if True in (#with espace
+        #end with comma or --
+        last.endswith((
+            "--"
+            ",",
+            ".")
+            ),
+        #begin with --
+        new.startswith(("--")) or \
+        #space beetwen text and brackets
+        (   new[0:1].isalpha() and \
+            last.endswith(CLOSE)),
+        (   last[-1:].isalpha() and \
+            new.startswith(OPEN))
+        ):
+        return True
+
+    #default
+    return False
 
 
 class MultiDimensionalArray(list):
@@ -59,10 +85,10 @@ class MultiDimensionalArray(list):
         '1 2 3 4 5'
         >>> mda = MultiDimensionalArray([1,'\\n',[2,3,'\\n',[4],'\\n',[5]]])
         >>> print(mda.to_string())
-        1 
-             2 3 
-                 4
-                 5
+        1
+            2 3
+                4
+                5
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> print(mda.to_string(expend=True))
         1
@@ -74,12 +100,12 @@ class MultiDimensionalArray(list):
 
         back_to_line = True
 
-        def branch(branch_data, deep=0, last_token=None):
+        def branch(branch_data, deep=0, previous_token=None):
             nonlocal back_to_line, expend
             text = ""
             for token in branch_data:
                 if isinstance(token, list):
-                    text += branch(token, deep=deep + 1, last_token=last_token)
+                    text += branch(token, deep=deep + 1, previous_token=previous_token)
                     continue
 
                 if strip:
@@ -91,18 +117,17 @@ class MultiDimensionalArray(list):
                     back_to_line = False
                     token = token.lstrip()
 
-                if strip and space_beetwen(last_token, token):
+                if strip and space_beetwen(previous_token, token):
                     text += " "
 
                 text += token
 
-                if token == "\n":
-                    back_to_line = True
-                if expend:
+                if expend or token == "\n":
+                    text = text.rstrip()
                     back_to_line = True
                     text += "\n"
 
-                last_token = token
+                previous_token = token
 
             return text
 
@@ -121,16 +146,12 @@ class MultiDimensionalArray(list):
         >>> mda
         [1, [2, 3, [4], [5, 6]]]
         """
-        assert isinstance(index, list) or isinstance(index, Pointer) or isinstance(index,
-                                                                                   tuple), "index must be a list, tuple or Pointer"
-        # elements = self
-        # for i in index:
-        #     assert isinstance(elements, list) or 0 <= i < len(elements), "index point out of MultiDimensionalArray"
-        #     elements = elements[i]
-
+        assert isinstance(index, list) \
+            or isinstance(index, Pointer) \
+            or isinstance(index, tuple), \
+            "index must be a list, tuple or Pointer"
 
         return eval("self" + get_path(index))
-        # return elements
 
     def set_element(self, index, element):
         """set a new element at the index position

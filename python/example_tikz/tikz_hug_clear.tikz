@@ -1,1 +1,36 @@
-No result
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+	\definecolor{Neon_Blue}{rgb}{0.302,0.302,1}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+				x=1cm,y=1cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-10.52,
+				xmax=10.52,
+				ymin=-9.27,
+				ymax=4.71,
+				xtick={-10,-9,... ,10},
+				ytick={-9,-8,... ,4},]
+			\clip(-8.1,-1.863) rectangle (-5.38,-0.277);
+			\draw[line width=2pt,domain=-10.52:10.52] plot (\x,{(--12.3492--0.8*\x)/3.72});
+			\draw[line width=2pt](-3.3,2.61) circle (1.755591068557823cm);
+			\begin{scriptsize}
+				\draw[fill=Neon_Blue](-7.02,1.81) circle (2.5pt);
+				\draw[color=Neon_Blue](-6.86,2.24) node {$A$};
+				\draw[fill=Neon_Blue](-3.3,2.61) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.14,3.04) node {$B$};
+				\draw[color=black](-10.34,1.02) node {$f$};
+				\draw[fill=Neon_Blue](-4,1) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.84,1.42) node {$C$};
+				\draw[color=black](-4.1,3.94) node {$c$};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{document}

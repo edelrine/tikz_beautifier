@@ -47,7 +47,7 @@
                     $tikz_file = fopen("./tikz_to_convert", "w+");
                     fwrite($tikz_file, $tikz);
                     fclose($tikz_file);
-                    $command = 'python3 python/main.py ./tikz_to_convert -hide -tab "'.($ident).'" -round "'.($round).'" ' ;
+                    $command = 'python3 python/main.py ./tikz_to_convert -tab "'.($ident).'" -round "'.($round).'" ' ;
                     $command = $command.($color=="true" ?'':'-no-color ').($sort=="true" ?'': '-no-sort ').($order=="abscissa" ?'': '-ordinate-last ');
                     $command = $command.($absci_order=="ascending" ?'': '-decreasing-abscissa ').($ordi_order=="ascending" ?'': '-decreasing-ordinate ').($by_type=="true" ?'': '-by-type ');
                     $command = $command.($tikz =="true" ?'': '-tikz-only ');    
