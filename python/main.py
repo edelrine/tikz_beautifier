@@ -1,43 +1,50 @@
 import time
-import logging 
+import logging
 import argparse
 import traceback
 from class_latex import *
 from class_multidimensionalarray import *
 dirpath, filename = os.path.split(os.path.abspath(__file__))
+
 logging.basicConfig(
-    level=logging.DEBUG,
-    format="[%(levelname)s] %(message)s",
+    format="[%(levelname)-7s][%(funcName)-14s] %(message)s",
     handlers=[
         logging.FileHandler("debug.log"),
         logging.StreamHandler()
     ]
 )
 
+logger = logging.getLogger("beautifier")
+logger.setLevel(logging.CRITICAL+1) #desactivate log
 
-def run(fct, condition, *args, **kargs):
+def run(fct, condition=True, *args, **kargs):
     try:
         if condition :
-            logging.debug("Starting "+fct.__name__)
+            logger.debug("Starting "+fct.__name__)
             return fct(*args, **kargs)
         else :
-            logging.debug("Passing "+fct.__name__)
+            logger.debug("Passing "+fct.__name__)
             return None
     except:
-        logging.exception("["+fct.__name__+"]")
+        logger.exception("["+fct.__name__+"]")
         return None
 
-def tikz_beautifier(file, multidimensional=False ,**options):
+def beautifier(file, multidimensional=False ,**options):
     """run beautifier from python
     return the latex string or the multidimensional object of set to true
     set multidimensional=True if you want to get the multidensional array and not the formatted string"""
     LOCALTIME = time.localtime()
     dirpath, filename = os.path.split(os.path.abspath(__file__))
-    logging.debug("Start from function at"+str(time.asctime(LOCALTIME)))
-    logging.debug("Dirpath : "+str(dirpath)+" filename "+str(filename))
+    logger = logging.getLogger("beautifier")
+    logger.setLevel(
+        [logging.WARNING, logging.INFO, logging.DEBUG]
+        [options.get("v",2)]
+    )
+    logger.debug("Start from function at"+str(time.asctime(LOCALTIME)))
+    logger.debug("Dirpath : "+str(dirpath)+" filename "+str(filename))
 
-    logging.info("Generating Latex file")
-    latex = Latex(file)
+
+    latex = run(Latex,True, file)
 
 
     def set_colors(latex):
@@ -47,52 +54,76 @@ def tikz_beautifier(file, multidimensional=False ,**options):
             for row in csv_reader:
                 rgb_to_name[row[0]] = [int(row[1]), int(row[2]), int(row[3])]
         latex.rename_colors(rgb_to_name)
-    run(set_colors, not options["no_color"], latex)
+    run(set_colors, 
+        not options.get("no_color", False), 
+        latex
+    )
 
 
     def show_source(file):
-        logging.info("source :\n"+str(file)+"\n")
-    run(show_source, not options["hide_source"], file)
-
+        logger.info("source :\n\n"+str(file)+"\n")
+    run(show_source, 
+        not options.get("hide_source", False), 
+        file
+    )
 
     def set_clip(latex, options):
-        latex.tikz_set_clip(fixed_margin=options["clip_fix"], dynam_margin=options["clip_dyn"])
-    run(set_clip, options["no_clip"], latex, options)
+        latex.tikz_set_clip(
+            fixed_margin=options.get("clip_fix",1), 
+            dynam_margin=options.get("clip_dyn",0.1))
+    run(set_clip,
+        options.get("no_clip", False),
+        latex, options
+    )
 
     
     def round_digit(latex, options):
-        latex.round_digit(nb_digit=int(options["round"]))
-    run(round_digit, int(options["round"]) != 0, latex, options)
-
+        latex.round_digit(nb_digit=int(options.get("round", 3)))
+    run(round_digit, 
+        int(options.get("round",3)) != 0, 
+        latex, options
+    )
     
     def sort_lines(latex, options):
-        latex.tikz_sort_line(ordinate_first=options["ordinate_first"],
-                             decreasing_abscissa=options["decreasing_abscissa"],
-                             decreasing_ordinate=options["decreasing_ordinate"])
-    run(sort_lines, not options["no_sort"], latex, options)
+        latex.tikz_sort_line(
+            ordinate_first=options.get("ordinate_first",False),
+            decreasing_abscissa=options.get("decreasing_abscissa",False),
+            decreasing_ordinate=options.get("decreasing_ordinate",False))
+    run(sort_lines, 
+        not options.get("no_sort",False)
+        , latex, options
+    )
 
 
     def tikz_only(latex, options):
         latex.tikz_only()
-    run(tikz_only, options["tikz_only"], latex, options)
+    run(tikz_only, 
+        options.get("tikz_only",False), 
+        latex, options
+    )
 
 
     if multidimensional:
         return latex
 
     def get_result(latex, options):
-        strip = options['no_strip'] == False
-        return latex.to_string(tabulation=options["tab"], strip=strip)
+        strip = options.get('no_strip',False) == False
+        return latex.to_string(tabulation=options.get("tab","\t"), strip=strip)
     return run(get_result, True, latex, options)
 
 
-
-def tikz_beautifier_command_line(path_file, **options):
+def beautifier_CLI(path_file, **options):
     """run beautifier from terminal"""
+
     LOCALTIME = time.localtime()
     dirpath, filename = os.path.split(os.path.abspath(__file__))
-    logging.debug("Start from command line at"+str(time.asctime(LOCALTIME)))
-    logging.debug("Dirpath : "+str(dirpath)+" filename "+str(filename))
+    logger = logging.getLogger("beautifier")
+    logger.setLevel(
+        [logging.WARNING, logging.INFO, logging.DEBUG]
+        [options.get("v",2)]
+    )
+    logger.debug("Start from command line at"+str(time.asctime(LOCALTIME)))
+    logger.debug("Dirpath : "+str(dirpath)+" filename "+str(filename))
 
     
     def open_file(path_file):
@@ -101,17 +132,20 @@ def tikz_beautifier_command_line(path_file, **options):
     latex = run(open_file, True, path_file)
 
     if latex == []:
-        logging.warning("[Open file] :\nParsed file is empty.\n")
+        logger.warning("[Open file] :\nParsed file is empty.\n")
         return None
 
-    latex_result = run(tikz_beautifier,True, latex, **options)
+    latex_result = run(beautifier,True, latex, **options)
     if latex_result == None:
-        logging.warning("latex_result is empty")
+        logger.warning("latex_result is empty")
         return None
 
     def show_result(latex_result):
-        logging.info(str(latex_result) + "\n")
-    run(show_result, not options["hide_output"], latex_result)
+        logger.info("Result :\n\n"+str(latex_result) + "\n")
+    run(show_result, 
+        not options.get("hide_output",False),
+        latex_result
+    )
 
     
     def save(path_file):
@@ -119,13 +153,16 @@ def tikz_beautifier_command_line(path_file, **options):
         file_to_save = "".join([p + "/" for p in path_file.split("/")[:-1]]) + name + "_clear.tikz"
         with open(file_to_save, 'w+') as d:
             d.write(latex_result)
-        logging.info("file save as" + str(file_to_save))
-    run(save, options["no_save"], path_file)
+        logger.info("file save as" + str(file_to_save))
+    run(save,
+        options.get("no_save",False),
+        path_file
+    )
 
-    logging.debug("End at "+str(time.asctime(LOCALTIME))+"s")
+    logger.debug("End at "+str(time.asctime(LOCALTIME))+"s")
 
 if __name__ == '__main__':
-    #extract command line parameters, see tikz_beautifier_command_line or tikz_beautifier for main code
+    #extract command line parameters, see beautifier_CLI or beautifier for main code
     parser = argparse.ArgumentParser(
         prog="Tikz Beautifier",
         description="Formats a Tikz code",
@@ -162,9 +199,9 @@ if __name__ == '__main__':
 
     CLI = parser.add_argument_group(title="Commande line settings")
     CLI.add_argument('-v',
-        help="level of debugging, -v to -vvv",
+        help="level of debugging, -v to -vv (no output, infos, debug)",
         action='count',
-        default="0")
+        default=0)
     CLI.add_argument('-no-save',
         help="dont saves in the same location as the source",
         action='store_true')
@@ -192,7 +229,7 @@ if __name__ == '__main__':
         help="sorted ordinate in decreasing order",
         action='store_true')
 
-    clipping = parser.add_argument_group(title="Clipping")
+    clipping = parser.add_argument_group(title="Clipping (experimental)")
     clipping.add_argument("-no-clip",
         help="dont set automatic clip",
         action='store_true')
@@ -207,4 +244,4 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
     options = {keys : value for keys, value in vars(args).items()}
-    tikz_beautifier_command_line(options["path"], **options)
+    beautifier_CLI(options["path"], **options)
