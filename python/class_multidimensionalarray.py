@@ -34,11 +34,13 @@ def space_beetwen(last, new):
         last.endswith((
             *OPEN,
             "\\",
-            "=")),
+            "="
+        )),
         #closing bracket after
         new.startswith((
             *CLOSE,
-            "=")),
+            "="
+        )),
         #no space beetwen command and parameters
         last.startswith("\\") and new.startswith(OPEN)
         ):
@@ -47,17 +49,15 @@ def space_beetwen(last, new):
     if True in (#with espace
         #end with comma or --
         last.endswith((
-            "--"
+            "--",
             ",",
-            ".")
-            ),
+            "."
+        )),
         #begin with --
-        new.startswith(("--")) or \
+        new.startswith("--"),
         #space beetwen text and brackets
-        (   new[0:1].isalpha() and \
-            last.endswith(CLOSE)),
-        (   last[-1:].isalpha() and \
-            new.startswith(OPEN))
+        (new[0:1].isalpha()  and last.endswith(CLOSE)),
+        (last[-1:].isalpha() and new.startswith(OPEN))
         ):
         return True
 
@@ -81,31 +81,25 @@ class MultiDimensionalArray(list):
         """return indented string of the MultiDimensionalArray
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
-        >>> mda.to_string()
+        >>> mda.to_string(strip=False)
         '1 2 3 4 5'
-        >>> mda = MultiDimensionalArray([1,'\\n',[2,3,'\\n',[4],'\\n',[5]]])
-        >>> print(mda.to_string())
-        1
-            2 3
-                4
-                5
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> print(mda.to_string(expend=True))
         1
-             2
-             3
-                 4
-                 5
+            2
+            3
+                4
+                5
         """
-
         back_to_line = True
+        previous_token=None
 
-        def branch(branch_data, deep=0, previous_token=None):
-            nonlocal back_to_line, expend
+        def branch(branch_data, deep=0):
+            nonlocal back_to_line, expend, previous_token
             text = ""
             for token in branch_data:
                 if isinstance(token, list):
-                    text += branch(token, deep=deep + 1, previous_token=previous_token)
+                    text += branch(token, deep=deep + 1)
 
                     #remove empty line of the child
                     if text.split("\n")[-1:] and text.split("\n")[-1].rstrip() == "":
@@ -121,7 +115,9 @@ class MultiDimensionalArray(list):
                     back_to_line = False
                     token = token.lstrip()
 
-                if strip and space_beetwen(previous_token, token):
+
+                if previous_token != None and \
+                    (not strip or (strip and space_beetwen(previous_token, token))):
                     text += " "
 
                 text += token
@@ -132,8 +128,8 @@ class MultiDimensionalArray(list):
                     text += "\n"
 
                 previous_token = token
-
             return text
+
         return branch(self).rstrip()
 
     def get_element(self, index):
@@ -415,9 +411,9 @@ class Pointer(list):
         [2, 3, [4], [5]]
         """
         element = self.mda.get_element(self)
-        if not isinstance(element, str) :
-            return element
-        return element.strip() if strip else element
+        if isinstance(element, str) :
+            return element.strip() if strip else element
+        return element
 
     def set_element(self, element):
         """set a element at the index position
@@ -512,7 +508,7 @@ class Pointer(list):
         [1, 0]
         """
         assert isinstance(step, int), "step must be a int"
-        self[-1:] = [self.merge_index(self.get_position() + step, loop=False)]  # wip
+        self[-1:] = [self.merge_index(self.get_position() + step, loop=False)]
 
     def go_next(self):
         self.move(1)
@@ -580,7 +576,7 @@ class Pointer(list):
         self.move_until(lambda token, index: token == element)
 
     def append(self, element, extend=False):
-        """append a new element at the index node index
+        """append a new element at the index of the pointer
     
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda, index=[1,3])
@@ -589,7 +585,6 @@ class Pointer(list):
         [1, [2, 3, [4], [5], 6]]
         >>> p.get_parent()
         [2, 3, [4], [5], 6]
-
         """
         remember_position = self.get_position()
         self.go_up()

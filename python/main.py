@@ -19,15 +19,20 @@ logger.setLevel(logging.CRITICAL+1) #desactivate log
 
 def run(fct, condition=True, *args, **kargs):
     try:
+        time_start = time.time()
         if condition :
             logger.debug("Starting "+fct.__name__)
             return fct(*args, **kargs)
         else :
-            logger.debug("Passing "+fct.__name__)
+            logger.debug("Skipping "+fct.__name__)
             return None
     except:
         logger.exception("["+fct.__name__+"]")
         return None
+
+    finally:
+        logger.debug("Ending   {:<20} in {:<6}s.".format(fct.__name__, str(round(time.time() - time_start, 3))))            
+
 
 def beautifier(file, multidimensional=False ,**options):
     """run beautifier from python
@@ -38,9 +43,9 @@ def beautifier(file, multidimensional=False ,**options):
     logger = logging.getLogger("beautifier")
     logger.setLevel(
         [logging.WARNING, logging.INFO, logging.DEBUG]
-        [options.get("v",2)]
+        [min(options.get("v",2), 2)]
     )
-    logger.debug("Start from function at"+str(time.asctime(LOCALTIME)))
+    logger.debug("Start from function, "+str(time.asctime(LOCALTIME)))
     logger.debug("Dirpath : "+str(dirpath)+" filename "+str(filename))
 
 
@@ -120,9 +125,9 @@ def beautifier_CLI(path_file, **options):
     logger = logging.getLogger("beautifier")
     logger.setLevel(
         [logging.WARNING, logging.INFO, logging.DEBUG]
-        [options.get("v",2)]
+        [min(options.get("v",2), 2)]
     )
-    logger.debug("Start from command line at"+str(time.asctime(LOCALTIME)))
+    logger.debug("Start from command line, "+str(time.asctime(LOCALTIME)))
     logger.debug("Dirpath : "+str(dirpath)+" filename "+str(filename))
 
     

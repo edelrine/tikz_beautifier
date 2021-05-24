@@ -14,16 +14,16 @@ class Latex(MultiDimensionalArray):
 
         >>> latex = Latex("\\documentclass[10.3pt]{article}\\n\\\\begin{document}\\n\\section{A section}\\n\\end{document}")
         >>> latex
-        ['\\\\documentclass', '[', ['10.3pt'], ']', '{', ['article'], '}', '\\n', '\\\\begin', ['{', ['document'], '}', '\\n', '\\\\section', '{', ['A section'], '}', '\\n'], '\\\\end', '{', ['document'], '}']
+        ['\\\\documentclass', '[', ['10.3', 'pt'], ']', '{', ['article'], '}', '\\n', '\\\\begin', ['{', ['document'], '}', '\\n', '\\\\section', '{', ['A section'], '}', '\\n'], '\\\\end', '{', ['document'], '}']
         """
-        REGEX_FLAOT = "\b[-+]?\d*\.*\d+"
-        REGEX_SPLIT_DATA = r"(\[|\]|\(|\)|\{|\}|,|\n|=|"+REGEX_FLAOT+")"
+        REGEX_FLAOT = r"[-+]\b[-+]?\d*\.*\d+"
+        REGEX_SPLIT_DATA = r"(\[|\]|\(|\)|\{|\}|,|\n|=|--|"+REGEX_FLAOT+")"
         BRACKET_OPEN = ("(", "[", "{", "\\begin")
         BRACKET_CLOSE = (")", "]", "}", "\\end")
-        BRACKET_INVERSE = {}
-        for o, c in zip(BRACKET_OPEN, BRACKET_CLOSE):
-            BRACKET_INVERSE[o] = c
-            BRACKET_INVERSE[c] = o
+        BRACKET_INVERSE = {
+            **{o:c for o,c in zip(BRACKET_OPEN, BRACKET_CLOSE)},
+            **{c:o for o,c in zip(BRACKET_OPEN, BRACKET_CLOSE)}
+        }
 
         # parse latex
         stack_bracket = []
@@ -31,16 +31,20 @@ class Latex(MultiDimensionalArray):
         pointer = Pointer(latex)
 
         for token in re.split(REGEX_SPLIT_DATA, string):
+            #empty token
             if token == "":
                 continue
 
+            #go up in the tree structure
             if token in BRACKET_CLOSE and BRACKET_INVERSE[token] in stack_bracket:
                 while stack_bracket.pop() != BRACKET_INVERSE[token]:
                     pointer.go_up()
                 pointer.go_up()
 
+            #add token
             pointer.append(token)
 
+            #strat child
             if token in BRACKET_OPEN:
                 pointer.append([])
                 pointer.next_node()
@@ -273,6 +277,7 @@ class Latex(MultiDimensionalArray):
         tikzs = [tikz for tikz in self.get_tikz()]
         self = tikzs[n].get_element()
 
+latex = Latex("\\documentclass[10.3pt]{article}\\n\\\\begin{document}\\n\\section{A section}\\n\\end{document}")
 
 if __name__ == '__main__':
     import doctest
