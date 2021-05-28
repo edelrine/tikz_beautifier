@@ -4,8 +4,8 @@ import argparse
 import traceback
 from class_latex import *
 from class_multidimensionalarray import *
-dirpath, filename = os.path.split(os.path.abspath(__file__))
 
+dirpath, filename = os.path.split(os.path.abspath(__file__))
 logging.basicConfig(
     format="[%(levelname)-7s][%(funcName)-14s] %(message)s",
     handlers=[
