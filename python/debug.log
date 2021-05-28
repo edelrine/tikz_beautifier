@@ -1,0 +1,4851 @@
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:03:07 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_filein 0.0s
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:03:07 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latexin 0.02s
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colorsin 0.004s
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_sourcein 0.0s
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clipin 0.0s
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digitin 0.003s
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_linesin 0.003s
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_onlyin 0.0s
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_resultin 0.001s
+[DEBUG  ][run           ] Ending   beautifierin 0.031s
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+	\definecolor{Neon_Blue}{rgb}{0.302,0.302,1}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+				x=1cm,y=1cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-10.52,
+				xmax=10.52,
+				ymin=-9.27,
+				ymax=4.71,
+				xtick={-10,-9,... ,10},
+				ytick={-9,-8,... ,4},]
+			\clip(-10.52,-9.27) rectangle (10.52,4.71);
+			\draw[line width=2pt,domain=-10.52:10.52] plot (\x,{(--12.3492--0.8*\x)/3.72});
+			\draw[line width=2pt](-3.3,2.61) circle (1.755591068557823cm);
+			\begin{scriptsize}
+				\draw[fill=Neon_Blue](-7.02,1.81) circle (2.5pt);
+				\draw[color=Neon_Blue](-6.86,2.24) node {$A$};
+				\draw[fill=Neon_Blue](-3.3,2.61) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.14,3.04) node {$B$};
+				\draw[color=black](-10.34,1.02) node {$f$};
+				\draw[fill=Neon_Blue](-4,1) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.84,1.42) node {$C$};
+				\draw[color=black](-4.1,3.94) node {$c$};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_resultin 0.0s
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   savein 0.0s
+[DEBUG  ][beautifier_CLI] End at Mon May 24 13:03:07 2021s
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:03:44 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_filein 0.0s
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:03:44 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latexin 0.025s
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colorsin 0.004s
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_sourcein 0.0s
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clipin 0.0s
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digitin 0.002s
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_linesin 0.003s
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_onlyin 0.0s
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_resultin 0.001s
+[DEBUG  ][run           ] Ending   beautifierin 0.036s
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+	\definecolor{Neon_Blue}{rgb}{0.302,0.302,1}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+				x=1cm,y=1cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-10.52,
+				xmax=10.52,
+				ymin=-9.27,
+				ymax=4.71,
+				xtick={-10,-9,... ,10},
+				ytick={-9,-8,... ,4},]
+			\clip(-10.52,-9.27) rectangle (10.52,4.71);
+			\draw[line width=2pt,domain=-10.52:10.52] plot (\x,{(--12.3492--0.8*\x)/3.72});
+			\draw[line width=2pt](-3.3,2.61) circle (1.755591068557823cm);
+			\begin{scriptsize}
+				\draw[fill=Neon_Blue](-7.02,1.81) circle (2.5pt);
+				\draw[color=Neon_Blue](-6.86,2.24) node {$A$};
+				\draw[fill=Neon_Blue](-3.3,2.61) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.14,3.04) node {$B$};
+				\draw[color=black](-10.34,1.02) node {$f$};
+				\draw[fill=Neon_Blue](-4,1) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.84,1.42) node {$C$};
+				\draw[color=black](-4.1,3.94) node {$c$};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_resultin 0.0s
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   savein 0.0s
+[DEBUG  ][beautifier_CLI] End at Mon May 24 13:03:44 2021s
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:07:20 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0 s
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:07:20 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.021 s
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.004 s
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0 s
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0 s
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.002 s
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.002 s
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0 s
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.001 s
+[DEBUG  ][run           ] Ending   beautifier           in 0.031 s
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+	\definecolor{Neon_Blue}{rgb}{0.302,0.302,1}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+				x=1cm,y=1cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-10.52,
+				xmax=10.52,
+				ymin=-9.27,
+				ymax=4.71,
+				xtick={-10,-9,... ,10},
+				ytick={-9,-8,... ,4},]
+			\clip(-10.52,-9.27) rectangle (10.52,4.71);
+			\draw[line width=2pt,domain=-10.52:10.52] plot (\x,{(--12.3492--0.8*\x)/3.72});
+			\draw[line width=2pt](-3.3,2.61) circle (1.755591068557823cm);
+			\begin{scriptsize}
+				\draw[fill=Neon_Blue](-7.02,1.81) circle (2.5pt);
+				\draw[color=Neon_Blue](-6.86,2.24) node {$A$};
+				\draw[fill=Neon_Blue](-3.3,2.61) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.14,3.04) node {$B$};
+				\draw[color=black](-10.34,1.02) node {$f$};
+				\draw[fill=Neon_Blue](-4,1) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.84,1.42) node {$C$};
+				\draw[color=black](-4.1,3.94) node {$c$};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0 s
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0 s
+[DEBUG  ][beautifier_CLI] End at Mon May 24 13:07:20 2021s
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:09:17 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in  0.0s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:09:17 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.02s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.004s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_source          in  0.0s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in  0.0s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.002s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.003s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in  0.0s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.001s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.032s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+	\definecolor{Neon_Blue}{rgb}{0.302,0.302,1}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+				x=1cm,y=1cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-10.52,
+				xmax=10.52,
+				ymin=-9.27,
+				ymax=4.71,
+				xtick={-10,-9,... ,10},
+				ytick={-9,-8,... ,4},]
+			\clip(-10.52,-9.27) rectangle (10.52,4.71);
+			\draw[line width=2pt,domain=-10.52:10.52] plot (\x,{(--12.3492--0.8*\x)/3.72});
+			\draw[line width=2pt](-3.3,2.61) circle (1.755591068557823cm);
+			\begin{scriptsize}
+				\draw[fill=Neon_Blue](-7.02,1.81) circle (2.5pt);
+				\draw[color=Neon_Blue](-6.86,2.24) node {$A$};
+				\draw[fill=Neon_Blue](-3.3,2.61) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.14,3.04) node {$B$};
+				\draw[color=black](-10.34,1.02) node {$f$};
+				\draw[fill=Neon_Blue](-4,1) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.84,1.42) node {$C$};
+				\draw[color=black](-4.1,3.94) node {$c$};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_result          in  0.0s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in  0.0s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 13:09:17 2021s
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:09:29 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in    0.0s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:09:29 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in  0.023s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in  0.004s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_source          in    0.0s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in    0.0s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in  0.003s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in  0.003s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in    0.0s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in  0.001s.
+[DEBUG  ][run           ] Ending   beautifier           in  0.034s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+	\definecolor{Neon_Blue}{rgb}{0.302,0.302,1}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+				x=1cm,y=1cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-10.52,
+				xmax=10.52,
+				ymin=-9.27,
+				ymax=4.71,
+				xtick={-10,-9,... ,10},
+				ytick={-9,-8,... ,4},]
+			\clip(-10.52,-9.27) rectangle (10.52,4.71);
+			\draw[line width=2pt,domain=-10.52:10.52] plot (\x,{(--12.3492--0.8*\x)/3.72});
+			\draw[line width=2pt](-3.3,2.61) circle (1.755591068557823cm);
+			\begin{scriptsize}
+				\draw[fill=Neon_Blue](-7.02,1.81) circle (2.5pt);
+				\draw[color=Neon_Blue](-6.86,2.24) node {$A$};
+				\draw[fill=Neon_Blue](-3.3,2.61) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.14,3.04) node {$B$};
+				\draw[color=black](-10.34,1.02) node {$f$};
+				\draw[fill=Neon_Blue](-4,1) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.84,1.42) node {$C$};
+				\draw[color=black](-4.1,3.94) node {$c$};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_result          in    0.0s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in    0.0s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 13:09:29 2021s
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:09:37 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:09:37 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.025 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.004 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.002 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.003 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.001 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.036 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+	\definecolor{Neon_Blue}{rgb}{0.302,0.302,1}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+				x=1cm,y=1cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-10.52,
+				xmax=10.52,
+				ymin=-9.27,
+				ymax=4.71,
+				xtick={-10,-9,... ,10},
+				ytick={-9,-8,... ,4},]
+			\clip(-10.52,-9.27) rectangle (10.52,4.71);
+			\draw[line width=2pt,domain=-10.52:10.52] plot (\x,{(--12.3492--0.8*\x)/3.72});
+			\draw[line width=2pt](-3.3,2.61) circle (1.755591068557823cm);
+			\begin{scriptsize}
+				\draw[fill=Neon_Blue](-7.02,1.81) circle (2.5pt);
+				\draw[color=Neon_Blue](-6.86,2.24) node {$A$};
+				\draw[fill=Neon_Blue](-3.3,2.61) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.14,3.04) node {$B$};
+				\draw[color=black](-10.34,1.02) node {$f$};
+				\draw[fill=Neon_Blue](-4,1) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.84,1.42) node {$C$};
+				\draw[color=black](-4.1,3.94) node {$c$};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 13:09:37 2021s
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:10:01 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 1e-05 s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:10:01 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.02301s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.00601s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_source          in 1e-05 s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 1e-05 s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.00301s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.00301s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 1e-05 s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.00101s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.03701s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+	\definecolor{Neon_Blue}{rgb}{0.302,0.302,1}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+				x=1cm,y=1cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-10.52,
+				xmax=10.52,
+				ymin=-9.27,
+				ymax=4.71,
+				xtick={-10,-9,... ,10},
+				ytick={-9,-8,... ,4},]
+			\clip(-10.52,-9.27) rectangle (10.52,4.71);
+			\draw[line width=2pt,domain=-10.52:10.52] plot (\x,{(--12.3492--0.8*\x)/3.72});
+			\draw[line width=2pt](-3.3,2.61) circle (1.755591068557823cm);
+			\begin{scriptsize}
+				\draw[fill=Neon_Blue](-7.02,1.81) circle (2.5pt);
+				\draw[color=Neon_Blue](-6.86,2.24) node {$A$};
+				\draw[fill=Neon_Blue](-3.3,2.61) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.14,3.04) node {$B$};
+				\draw[color=black](-10.34,1.02) node {$f$};
+				\draw[fill=Neon_Blue](-4,1) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.84,1.42) node {$C$};
+				\draw[color=black](-4.1,3.94) node {$c$};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_result          in 1e-05 s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 1e-05 s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 13:10:01 2021s
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:10:05 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:10:05 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.02  s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.004 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.002 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.003 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.001 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.03  s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+	\definecolor{Neon_Blue}{rgb}{0.302,0.302,1}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+		\begin{axis}[
+				x=1cm,y=1cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-10.52,
+				xmax=10.52,
+				ymin=-9.27,
+				ymax=4.71,
+				xtick={-10,-9,... ,10},
+				ytick={-9,-8,... ,4},]
+			\clip(-10.52,-9.27) rectangle (10.52,4.71);
+			\draw[line width=2pt,domain=-10.52:10.52] plot (\x,{(--12.3492--0.8*\x)/3.72});
+			\draw[line width=2pt](-3.3,2.61) circle (1.755591068557823cm);
+			\begin{scriptsize}
+				\draw[fill=Neon_Blue](-7.02,1.81) circle (2.5pt);
+				\draw[color=Neon_Blue](-6.86,2.24) node {$A$};
+				\draw[fill=Neon_Blue](-3.3,2.61) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.14,3.04) node {$B$};
+				\draw[color=black](-10.34,1.02) node {$f$};
+				\draw[fill=Neon_Blue](-4,1) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.84,1.42) node {$C$};
+				\draw[color=black](-4.1,3.94) node {$c$};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 13:10:05 2021s
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:36:39 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:36:39 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[ERROR  ][run           ] [Latex]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/class_latex.py", line 24, in __init__
+    **{o:c for o,c in zip(BRACKET_OPEN, BRACKET_CLOSE)}
+TypeError: unsupported operand type(s) for ** or pow(): 'dict' and 'dict'
+[DEBUG  ][run           ] Ending   Latex                in 0.0   s.
+[DEBUG  ][run           ] Starting set_colors
+[ERROR  ][run           ] [set_colors]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 61, in set_colors
+    latex.rename_colors(rgb_to_name)
+AttributeError: 'NoneType' object has no attribute 'rename_colors'
+[DEBUG  ][run           ] Ending   set_colors           in 0.001 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[ERROR  ][run           ] [round_digit]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 86, in round_digit
+    latex.round_digit(nb_digit=int(options.get("round", 3)))
+AttributeError: 'NoneType' object has no attribute 'round_digit'
+[DEBUG  ][run           ] Ending   round_digit          in 0.0   s.
+[DEBUG  ][run           ] Starting sort_lines
+[ERROR  ][run           ] [sort_lines]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 93, in sort_lines
+    latex.tikz_sort_line(
+AttributeError: 'NoneType' object has no attribute 'tikz_sort_line'
+[DEBUG  ][run           ] Ending   sort_lines           in 0.0   s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[ERROR  ][run           ] [get_result]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 116, in get_result
+    return latex.to_string(tabulation=options.get("tab","\t"), strip=strip)
+AttributeError: 'NoneType' object has no attribute 'to_string'
+[DEBUG  ][run           ] Ending   get_result           in 0.0   s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.003 s.
+[WARNING][beautifier_CLI] latex_result is empty
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:37:05 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:37:05 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.024 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.004 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.003 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.003 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.001 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.035 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+	\definecolor{Neon_Blue}{rgb}{0.302,0.302,1}
+	\begin{tikzpicture}[line cap=round,line join=round,>=triangle45,x=1cm,y=1cm]
+		\begin{axis}[
+				x=1cm,y=1cm,
+				axis lines=middle,
+				ymajorgrids=true,
+				xmajorgrids=true,
+				xmin=-10.52,
+				xmax=10.52,
+				ymin=-9.27,
+				ymax=4.71,
+				xtick={-10,-9,... ,10},
+				ytick={-9,-8,... ,4},]
+			\clip(-10.52,-9.27) rectangle (10.52,4.71);
+			\draw[line width=2pt,domain=-10.52:10.52] plot (\x,{(--12.349 --0.8*\x)/3.72});
+			\draw[line width=2pt](-3.3,2.61) circle (1.756cm);
+			\begin{scriptsize}
+				\draw[fill=Neon_Blue](-7.02,1.81) circle (2.5pt);
+				\draw[color=Neon_Blue](-6.86,2.24) node {$A$};
+				\draw[fill=Neon_Blue](-3.3,2.61) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.14,3.04) node {$B$};
+				\draw[color=black](-10.34,1.02) node {$f$};
+				\draw[fill=Neon_Blue](-4,1) circle (2.5pt);
+				\draw[color=Neon_Blue](-3.84,1.42) node {$C$};
+				\draw[color=black](-4.1,3.94) node {$c$};
+			\end{scriptsize}
+		\end{axis}
+	\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 13:37:05 2021s
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:37:22 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:37:22 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[ERROR  ][run           ] [Latex]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/class_latex.py", line 46, in __init__
+    pointer.append(token)
+  File "/home/lmx/Github/tikz_beautifier/python/class_multidimensionalarray.py", line 595, in append
+    self.go_up()
+  File "/home/lmx/Github/tikz_beautifier/python/class_multidimensionalarray.py", line 544, in go_up
+    assert self != [], "can go up at root"
+AssertionError: can go up at root
+[DEBUG  ][run           ] Ending   Latex                in 0.001 s.
+[DEBUG  ][run           ] Starting set_colors
+[ERROR  ][run           ] [set_colors]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 61, in set_colors
+    latex.rename_colors(rgb_to_name)
+AttributeError: 'NoneType' object has no attribute 'rename_colors'
+[DEBUG  ][run           ] Ending   set_colors           in 0.001 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[ERROR  ][run           ] [round_digit]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 86, in round_digit
+    latex.round_digit(nb_digit=int(options.get("round", 3)))
+AttributeError: 'NoneType' object has no attribute 'round_digit'
+[DEBUG  ][run           ] Ending   round_digit          in 0.0   s.
+[DEBUG  ][run           ] Starting sort_lines
+[ERROR  ][run           ] [sort_lines]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 93, in sort_lines
+    latex.tikz_sort_line(
+AttributeError: 'NoneType' object has no attribute 'tikz_sort_line'
+[DEBUG  ][run           ] Ending   sort_lines           in 0.0   s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[ERROR  ][run           ] [get_result]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 116, in get_result
+    return latex.to_string(tabulation=options.get("tab","\t"), strip=strip)
+AttributeError: 'NoneType' object has no attribute 'to_string'
+[DEBUG  ][run           ] Ending   get_result           in 0.0   s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.003 s.
+[WARNING][beautifier_CLI] latex_result is empty
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:37:53 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:37:53 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[ERROR  ][run           ] [Latex]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/class_latex.py", line 47, in __init__
+    pointer.append(token)
+  File "/home/lmx/Github/tikz_beautifier/python/class_multidimensionalarray.py", line 595, in append
+    self.go_up()
+  File "/home/lmx/Github/tikz_beautifier/python/class_multidimensionalarray.py", line 544, in go_up
+    assert self != [], "can go up at root"
+AssertionError: can go up at root
+[DEBUG  ][run           ] Ending   Latex                in 0.001 s.
+[DEBUG  ][run           ] Starting set_colors
+[ERROR  ][run           ] [set_colors]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 61, in set_colors
+    latex.rename_colors(rgb_to_name)
+AttributeError: 'NoneType' object has no attribute 'rename_colors'
+[DEBUG  ][run           ] Ending   set_colors           in 0.002 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[ERROR  ][run           ] [round_digit]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 86, in round_digit
+    latex.round_digit(nb_digit=int(options.get("round", 3)))
+AttributeError: 'NoneType' object has no attribute 'round_digit'
+[DEBUG  ][run           ] Ending   round_digit          in 0.0   s.
+[DEBUG  ][run           ] Starting sort_lines
+[ERROR  ][run           ] [sort_lines]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 93, in sort_lines
+    latex.tikz_sort_line(
+AttributeError: 'NoneType' object has no attribute 'tikz_sort_line'
+[DEBUG  ][run           ] Ending   sort_lines           in 0.0   s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[ERROR  ][run           ] [get_result]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 116, in get_result
+    return latex.to_string(tabulation=options.get("tab","\t"), strip=strip)
+AttributeError: 'NoneType' object has no attribute 'to_string'
+[DEBUG  ][run           ] Ending   get_result           in 0.0   s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.004 s.
+[WARNING][beautifier_CLI] latex_result is empty
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:38:32 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:38:32 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[ERROR  ][run           ] [Latex]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/class_latex.py", line 46, in __init__
+    pointer.append(token)
+  File "/home/lmx/Github/tikz_beautifier/python/class_multidimensionalarray.py", line 595, in append
+    self.go_up()
+  File "/home/lmx/Github/tikz_beautifier/python/class_multidimensionalarray.py", line 544, in go_up
+    assert self != [], "can go up at root"
+AssertionError: can go up at root
+[DEBUG  ][run           ] Ending   Latex                in 0.001 s.
+[DEBUG  ][run           ] Starting set_colors
+[ERROR  ][run           ] [set_colors]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 61, in set_colors
+    latex.rename_colors(rgb_to_name)
+AttributeError: 'NoneType' object has no attribute 'rename_colors'
+[DEBUG  ][run           ] Ending   set_colors           in 0.001 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[ERROR  ][run           ] [round_digit]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 86, in round_digit
+    latex.round_digit(nb_digit=int(options.get("round", 3)))
+AttributeError: 'NoneType' object has no attribute 'round_digit'
+[DEBUG  ][run           ] Ending   round_digit          in 0.0   s.
+[DEBUG  ][run           ] Starting sort_lines
+[ERROR  ][run           ] [sort_lines]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 93, in sort_lines
+    latex.tikz_sort_line(
+AttributeError: 'NoneType' object has no attribute 'tikz_sort_line'
+[DEBUG  ][run           ] Ending   sort_lines           in 0.0   s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[ERROR  ][run           ] [get_result]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 116, in get_result
+    return latex.to_string(tabulation=options.get("tab","\t"), strip=strip)
+AttributeError: 'NoneType' object has no attribute 'to_string'
+[DEBUG  ][run           ] Ending   get_result           in 0.0   s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.003 s.
+[WARNING][beautifier_CLI] latex_result is empty
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 13:38:49 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 13:38:49 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[ERROR  ][run           ] [Latex]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/class_latex.py", line 48, in __init__
+    pointer.append(token)
+  File "/home/lmx/Github/tikz_beautifier/python/class_multidimensionalarray.py", line 595, in append
+    self.go_up()
+  File "/home/lmx/Github/tikz_beautifier/python/class_multidimensionalarray.py", line 544, in go_up
+    assert self != [], "can go up at root"
+AssertionError: can go up at root
+[DEBUG  ][run           ] Ending   Latex                in 0.001 s.
+[DEBUG  ][run           ] Starting set_colors
+[ERROR  ][run           ] [set_colors]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 61, in set_colors
+    latex.rename_colors(rgb_to_name)
+AttributeError: 'NoneType' object has no attribute 'rename_colors'
+[DEBUG  ][run           ] Ending   set_colors           in 0.001 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+\documentclass[10pt]{article}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{mathrsfs}
+\usetikzlibrary{arrows}
+\pagestyle{empty}
+\begin{document}
+\definecolor{ududff}{rgb}{0.30196078431372547,0.30196078431372547,1}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+\begin{axis}[
+x=1cm,y=1cm,
+axis lines=middle,
+ymajorgrids=true,
+xmajorgrids=true,
+xmin=-10.52,
+xmax=10.52,
+ymin=-9.27,
+ymax=4.71,
+xtick={-10,-9,...,10},
+ytick={-9,-8,...,4},]
+\clip(-10.52,-9.27) rectangle (10.52,4.71);
+\draw [line width=2pt,domain=-10.52:10.52] plot(\x,{(--12.3492--0.8*\x)/3.72});
+\draw [line width=2pt] (-3.3,2.61) circle (1.755591068557823cm);
+\begin{scriptsize}
+\draw [fill=ududff] (-7.02,1.81) circle (2.5pt);
+\draw[color=ududff] (-6.86,2.24) node {$A$};
+\draw [fill=ududff] (-3.3,2.61) circle (2.5pt);
+\draw[color=ududff] (-3.14,3.04) node {$B$};
+\draw[color=black] (-10.34,1.02) node {$f$};
+\draw [fill=ududff] (-4,1) circle (2.5pt);
+\draw[color=ududff] (-3.84,1.42) node {$C$};
+\draw[color=black] (-4.1,3.94) node {$c$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{document}
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[ERROR  ][run           ] [round_digit]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 86, in round_digit
+    latex.round_digit(nb_digit=int(options.get("round", 3)))
+AttributeError: 'NoneType' object has no attribute 'round_digit'
+[DEBUG  ][run           ] Ending   round_digit          in 0.0   s.
+[DEBUG  ][run           ] Starting sort_lines
+[ERROR  ][run           ] [sort_lines]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 93, in sort_lines
+    latex.tikz_sort_line(
+AttributeError: 'NoneType' object has no attribute 'tikz_sort_line'
+[DEBUG  ][run           ] Ending   sort_lines           in 0.0   s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[ERROR  ][run           ] [get_result]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 116, in get_result
+    return latex.to_string(tabulation=options.get("tab","\t"), strip=strip)
+AttributeError: 'NoneType' object has no attribute 'to_string'
+[DEBUG  ][run           ] Ending   get_result           in 0.0   s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.003 s.
+[WARNING][beautifier_CLI] latex_result is empty
+[DEBUG  ][beautifier_CLI] Start from command line atMon May 24 18:16:15 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function atMon May 24 18:16:15 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.04  s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.053 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1,baseline,font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0,0){};
+	\node[nodeN](N0) at (2,2){};
+	\coordinate(N1) at (1,-1){};
+	\node(N00) at (3.5,2.7){};
+	\node(N01) at (3.5,1.2){};
+	\node(N000) at (4.5,3.1){};
+	\node(N001) at (4.5,2.3){};
+	\node(N010) at (4.5,1.6){};
+	\node(N011) at (4.5,0.8){};
+	%descendance
+	\draw[shift={(N00)},fill=colorBlight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,1.2)
+		(-0.3,0)
+		(2,-0.7)};
+	\draw[shift={(N00)},color=colorB](0,-0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)},fill=colorClight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,0.7)
+		(-0.3,0)
+		(2,-1.2)};
+	\draw[shift={(N01)},color=colorC](0,-0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5,2.7){};
+	\node[nodeN](N01) at (3.5,1.2){};
+	%nomenclature
+	\draw(N)+(-0.2,0.3) node [above]{Père de $n$};
+	\draw(N0)+(0,0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0,0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0,0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N) --(N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0) --(N00);
+	\draw(N0) --(N01);
+	\foreach \i in{0,1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:16:15 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:17:12 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:17:12 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.038 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.005 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.052 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1,baseline,font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0,0){};
+	\node[nodeN](N0) at (2,2){};
+	\coordinate(N1) at (1,-1){};
+	\node(N00) at (3.5,2.7){};
+	\node(N01) at (3.5,1.2){};
+	\node(N000) at (4.5,3.1){};
+	\node(N001) at (4.5,2.3){};
+	\node(N010) at (4.5,1.6){};
+	\node(N011) at (4.5,0.8){};
+	%descendance
+	\draw[shift={(N00)},fill=colorBlight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,1.2)
+		(-0.3,0)
+		(2,-0.7)};
+	\draw[shift={(N00)},color=colorB](0,-0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)},fill=colorClight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,0.7)
+		(-0.3,0)
+		(2,-1.2)};
+	\draw[shift={(N01)},color=colorC](0,-0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5,2.7){};
+	\node[nodeN](N01) at (3.5,1.2){};
+	%nomenclature
+	\draw(N)+(-0.2,0.3) node [above]{Père de $n$};
+	\draw(N0)+(0,0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0,0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0,0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N) --(N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0) --(N00);
+	\draw(N0) --(N01);
+	\foreach \i in{0,1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:17:12 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:19:43 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:19:43 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.035 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.048 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1,baseline,font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0,0){};
+	\node[nodeN](N0) at (2,2){};
+	\coordinate(N1) at (1,-1){};
+	\node(N00) at (3.5,2.7){};
+	\node(N01) at (3.5,1.2){};
+	\node(N000) at (4.5,3.1){};
+	\node(N001) at (4.5,2.3){};
+	\node(N010) at (4.5,1.6){};
+	\node(N011) at (4.5,0.8){};
+	%descendance
+	\draw[shift={(N00)},fill=colorBlight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,1.2)
+		(-0.3,0)
+		(2,-0.7)};
+	\draw[shift={(N00)},color=colorB](0,-0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)},fill=colorClight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,0.7)
+		(-0.3,0)
+		(2,-1.2)};
+	\draw[shift={(N01)},color=colorC](0,-0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5,2.7){};
+	\node[nodeN](N01) at (3.5,1.2){};
+	%nomenclature
+	\draw(N)+(-0.2,0.3) node [above]{Père de $n$};
+	\draw(N0)+(0,0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0,0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0,0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N) --(N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0) --(N00);
+	\draw(N0) --(N01);
+	\foreach \i in{0,1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:19:43 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:21:51 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:21:51 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.048 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.004 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.005 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.005 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.066 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1,baseline,font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0,0){};
+	\node[nodeN](N0) at (2,2){};
+	\coordinate(N1) at (1,-1){};
+	\node(N00) at (3.5,2.7){};
+	\node(N01) at (3.5,1.2){};
+	\node(N000) at (4.5,3.1){};
+	\node(N001) at (4.5,2.3){};
+	\node(N010) at (4.5,1.6){};
+	\node(N011) at (4.5,0.8){};
+	%descendance
+	\draw[shift={(N00)},fill=colorBlight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,1.2)
+		(-0.3,0)
+		(2,-0.7)};
+	\draw[shift={(N00)},color=colorB](0,-0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)},fill=colorClight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,0.7)
+		(-0.3,0)
+		(2,-1.2)};
+	\draw[shift={(N01)},color=colorC](0,-0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5,2.7){};
+	\node[nodeN](N01) at (3.5,1.2){};
+	%nomenclature
+	\draw(N)+(-0.2,0.3) node [above]{Père de $n$};
+	\draw(N0)+(0,0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0,0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0,0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N) --(N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0) --(N00);
+	\draw(N0) --(N01);
+	\foreach \i in{0,1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:21:51 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:22:28 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:22:28 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.049 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.004 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.005 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.065 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1,baseline,font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0,0){};
+	\node[nodeN](N0) at (2,2){};
+	\coordinate(N1) at (1,-1){};
+	\node(N00) at (3.5,2.7){};
+	\node(N01) at (3.5,1.2){};
+	\node(N000) at (4.5,3.1){};
+	\node(N001) at (4.5,2.3){};
+	\node(N010) at (4.5,1.6){};
+	\node(N011) at (4.5,0.8){};
+	%descendance
+	\draw[shift={(N00)},fill=colorBlight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,1.2)
+		(-0.3,0)
+		(2,-0.7)};
+	\draw[shift={(N00)},color=colorB](0,-0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)},fill=colorClight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,0.7)
+		(-0.3,0)
+		(2,-1.2)};
+	\draw[shift={(N01)},color=colorC](0,-0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5,2.7){};
+	\node[nodeN](N01) at (3.5,1.2){};
+	%nomenclature
+	\draw(N)+(-0.2,0.3) node [above]{Père de $n$};
+	\draw(N0)+(0,0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0,0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0,0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)--(N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)--(N00);
+	\draw(N0)--(N01);
+	\foreach \i in{0,1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:22:28 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:22:35 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:22:35 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.037 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.051 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1,baseline,font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0,0){};
+	\node[nodeN](N0) at (2,2){};
+	\coordinate(N1) at (1,-1){};
+	\node(N00) at (3.5,2.7){};
+	\node(N01) at (3.5,1.2){};
+	\node(N000) at (4.5,3.1){};
+	\node(N001) at (4.5,2.3){};
+	\node(N010) at (4.5,1.6){};
+	\node(N011) at (4.5,0.8){};
+	%descendance
+	\draw[shift={(N00)},fill=colorBlight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,1.2)
+		(-0.3,0)
+		(2,-0.7)};
+	\draw[shift={(N00)},color=colorB](0,-0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)},fill=colorClight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,0.7)
+		(-0.3,0)
+		(2,-1.2)};
+	\draw[shift={(N01)},color=colorC](0,-0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5,2.7){};
+	\node[nodeN](N01) at (3.5,1.2){};
+	%nomenclature
+	\draw(N)+(-0.2,0.3) node [above]{Père de $n$};
+	\draw(N0)+(0,0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0,0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0,0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)--(N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)--(N00);
+	\draw(N0)--(N01);
+	\foreach \i in{0,1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:22:35 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:26:01 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:26:01 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.035 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.049 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1,baseline,font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0,0){};
+	\node[nodeN](N0) at (2,2){};
+	\coordinate(N1) at (1,-1){};
+	\node(N00) at (3.5,2.7){};
+	\node(N01) at (3.5,1.2){};
+	\node(N000) at (4.5,3.1){};
+	\node(N001) at (4.5,2.3){};
+	\node(N010) at (4.5,1.6){};
+	\node(N011) at (4.5,0.8){};
+	%descendance
+	\draw[shift={(N00)},fill=colorBlight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,1.2)
+		(-0.3,0)
+		(2,-0.7)};
+	\draw[shift={(N00)},color=colorB](0,-0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)},fill=colorClight]
+	plot [smooth,tension=1.5] coordinates {
+		(2,0.7)
+		(-0.3,0)
+		(2,-1.2)};
+	\draw[shift={(N01)},color=colorC](0,-0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5,2.7){};
+	\node[nodeN](N01) at (3.5,1.2){};
+	%nomenclature
+	\draw(N)+(-0.2,0.3) node [above]{Père de $n$};
+	\draw(N0)+(0,0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0,0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0,0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)--(N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)--(N00);
+	\draw(N0)--(N01);
+	\foreach \i in{0,1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:26:01 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:27:07 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:27:07 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.038 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.005 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.052 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)-- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)-- (N00);
+	\draw(N0)-- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:27:07 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:27:12 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:27:12 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.051 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.005 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.067 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)-- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)-- (N00);
+	\draw(N0)-- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:27:12 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:27:36 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:27:36 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.036 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.001 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.05  s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)-- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)-- (N00);
+	\draw(N0)-- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:27:36 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:28:51 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:28:51 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.038 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.005 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.053 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)-- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)-- (N00);
+	\draw(N0)-- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:28:51 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:29:12 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:29:12 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.038 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.051 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin {tikzpicture}[scale=1, baseline, font=\fontsize {4}{4}\selectfont]
+	\node [nodeN](N) at (0, 0){};
+	\node [nodeN](N0) at (2, 2){};
+	\coordinate (N1) at (1, -1){};
+	\node (N00) at (3.5, 2.7){};
+	\node (N01) at (3.5, 1.2){};
+	\node (N000) at (4.5, 3.1){};
+	\node (N001) at (4.5, 2.3){};
+	\node (N010) at (4.5, 1.6){};
+	\node (N011) at (4.5, 0.8){};
+	%descendance
+	\draw [shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw [shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw [shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw [shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node [nodeN](N00) at (3.5, 2.7){};
+	\node [nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw (N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw (N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw (N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw (N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw (N)-- (N0);
+	\draw [dashed](N) to (N1);
+	\draw (N0)-- (N00);
+	\draw (N0)-- (N01);
+	\foreach \i in {0, 1}{
+		\draw [dashed](N\i) to ++(15:0.8);
+		\draw [dashed](N\i) to ++(-15:0.8);
+	}
+	\draw [dashed](N) to ++(0:-1);
+\end {tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:29:12 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:29:41 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:29:41 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.037 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.005 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.052 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin {tikzpicture}[scale=1, baseline, font=\fontsize {4}{4}\selectfont]
+	\node [nodeN](N) at (0, 0){};
+	\node [nodeN](N0) at (2, 2){};
+	\coordinate (N1) at (1, -1){};
+	\node (N00) at (3.5, 2.7){};
+	\node (N01) at (3.5, 1.2){};
+	\node (N000) at (4.5, 3.1){};
+	\node (N001) at (4.5, 2.3){};
+	\node (N010) at (4.5, 1.6){};
+	\node (N011) at (4.5, 0.8){};
+	%descendance
+	\draw [shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw [shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw [shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw [shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node [nodeN](N00) at (3.5, 2.7){};
+	\node [nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw (N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw (N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw (N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw (N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw (N)-- (N0);
+	\draw [dashed](N) to (N1);
+	\draw (N0)-- (N00);
+	\draw (N0)-- (N01);
+	\foreach \i in {0, 1}{
+		\draw [dashed](N\i) to ++(15:0.8);
+		\draw [dashed](N\i) to ++(-15:0.8);
+	}
+	\draw [dashed](N) to ++(0:-1);
+\end {tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:29:41 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:29:55 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:29:55 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.037 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.005 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.051 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)-- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)-- (N00);
+	\draw(N0)-- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:29:55 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:31:33 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:31:33 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.037 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.051 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)-- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)-- (N00);
+	\draw(N0)-- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:31:33 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:31:39 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:31:39 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.04  s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.055 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)-- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)-- (N00);
+	\draw(N0)-- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:31:39 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:31:49 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:31:49 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.04  s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.005 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.056 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)-- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)-- (N00);
+	\draw(N0)-- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:31:49 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:34:28 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:34:28 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.036 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.049 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)-- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)-- (N00);
+	\draw(N0)-- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:34:28 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:34:36 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:34:36 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.042 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.005 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.058 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)-- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)-- (N00);
+	\draw(N0)-- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:34:36 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:37:06 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:37:06 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.039 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.005 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[ERROR  ][run           ] [get_result]
+Traceback (most recent call last):
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 25, in run
+    return fct(*args, **kargs)
+  File "/home/lmx/Github/tikz_beautifier/python/main.py", line 116, in get_result
+    return latex.to_string(tabulation=options.get("tab","\t"), strip=strip)
+  File "/home/lmx/Github/tikz_beautifier/python/class_multidimensionalarray.py", line 132, in to_string
+    return branch(self)[0].rstrip()
+  File "/home/lmx/Github/tikz_beautifier/python/class_multidimensionalarray.py", line 102, in branch
+    text += branch(token, deep=deep + 1, previous_token=previous_token)
+TypeError: branch() got an unexpected keyword argument 'previous_token'
+[DEBUG  ][run           ] Ending   get_result           in 0.001 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.053 s.
+[WARNING][beautifier_CLI] latex_result is empty
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:37:22 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:37:22 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.036 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.049 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:37:22 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:37:36 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:37:36 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.038 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.052 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N)-- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0)-- (N00);
+	\draw(N0)-- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:37:36 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:37:58 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:37:58 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.04  s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.005 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.055 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N) -- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0) -- (N00);
+	\draw(N0) -- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:37:58 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:39:35 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:39:35 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.041 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.055 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N) -- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0) -- (N00);
+	\draw(N0) -- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0:-1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:39:35 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:40:13 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:40:13 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.038 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.052 s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N) -- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0) -- (N00);
+	\draw(N0) -- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0: -1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:40:13 2021s
+[DEBUG  ][beautifier_CLI] Start from command line, Mon May 24 18:40:27 2021
+[DEBUG  ][beautifier_CLI] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting open_file
+[DEBUG  ][run           ] Ending   open_file            in 0.0   s.
+[DEBUG  ][run           ] Starting beautifier
+[DEBUG  ][beautifier    ] Start from function, Mon May 24 18:40:27 2021
+[DEBUG  ][beautifier    ] Dirpath : /home/lmx/Github/tikz_beautifier/python filename main.py
+[DEBUG  ][run           ] Starting Latex
+[DEBUG  ][run           ] Ending   Latex                in 0.037 s.
+[DEBUG  ][run           ] Starting set_colors
+[DEBUG  ][run           ] Ending   set_colors           in 0.003 s.
+[DEBUG  ][run           ] Starting show_source
+[INFO   ][show_source   ] source :
+
+%scale = 0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+  \node[nodeN]  (N)    at (0,0) {};
+  \node[nodeN]  (N0)   at (2,2) {};
+  \coordinate   (N1)   at (1,-1) {};
+  \node         (N00)  at (3.5,2.7) {};
+  \node         (N01)  at (3.5,1.2) {};
+  \node         (N000) at (4.5,3.1) {};
+  \node         (N001) at (4.5,2.3) {};
+  \node         (N010) at (4.5,1.6) {};
+  \node         (N011) at (4.5,0.8) {};
+
+
+  
+  %descendance
+  \draw[shift={(N00)}, fill=colorBlight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 1.2)
+    (-0.3, 0)
+    (2, -0.7)};
+  \draw[shift={(N00)}, color=colorB] (0,-0.2) node [below right] {Descendance gauche};
+  
+  \draw[shift={(N01)}, fill=colorClight]
+    plot [smooth, tension=1.5] coordinates {
+    (2, 0.7)
+    (-0.3, 0)
+    (2, -1.2)};
+  \draw[shift={(N01)}, color=colorC] (0,-0.2) node [below right] {Descendance droite};
+  
+  %on les retrace
+  \node[nodeN]  (N00)  at (3.5,2.7) {};
+  \node[nodeN]  (N01)  at (3.5,1.2) {};
+  
+  %nomenclature
+  \draw (N)   + (-0.2, +0.3)   node[above] {Père de $n$};
+  
+  \draw (N0)  + (0, 0.2) node[above] {Noeud $n$};
+  \draw (N00) + (0, 0.2) node[above right] {Enfant gauche de $n$};
+  \draw (N01) + (0, 0.2) node[above right] {Enfant droite de $n$};
+
+  %arrêtes
+  \draw (N) -- (N0);
+  \draw[dashed] (N) to (N1);
+  \draw (N0) -- (N00);
+  \draw (N0) -- (N01);
+  
+  \foreach \i in {00,01} {
+    \draw[dashed] (N\i) to ++(15:0.8);
+    \draw[dashed] (N\i) to ++(-15:0.8);
+  }
+  
+\draw[dashed] (N) to ++ (0:-1);
+\end{tikzpicture}
+
+
+
+[DEBUG  ][run           ] Ending   show_source          in 0.0   s.
+[DEBUG  ][run           ] Skipping set_clip
+[DEBUG  ][run           ] Ending   set_clip             in 0.0   s.
+[DEBUG  ][run           ] Starting round_digit
+[DEBUG  ][run           ] Ending   round_digit          in 0.004 s.
+[DEBUG  ][run           ] Starting sort_lines
+[DEBUG  ][run           ] Ending   sort_lines           in 0.004 s.
+[DEBUG  ][run           ] Skipping tikz_only
+[DEBUG  ][run           ] Ending   tikz_only            in 0.0   s.
+[DEBUG  ][run           ] Starting get_result
+[DEBUG  ][run           ] Ending   get_result           in 0.002 s.
+[DEBUG  ][run           ] Ending   beautifier           in 0.05  s.
+[DEBUG  ][run           ] Starting show_result
+[INFO   ][show_result   ] Result :
+
+%scale=0.65
+\begin{tikzpicture}[scale=1, baseline, font=\fontsize{4}{4}\selectfont]
+	\node[nodeN](N) at (0, 0){};
+	\node[nodeN](N0) at (2, 2){};
+	\coordinate(N1) at (1, -1){};
+	\node(N00) at (3.5, 2.7){};
+	\node(N01) at (3.5, 1.2){};
+	\node(N000) at (4.5, 3.1){};
+	\node(N001) at (4.5, 2.3){};
+	\node(N010) at (4.5, 1.6){};
+	\node(N011) at (4.5, 0.8){};
+	%descendance
+	\draw[shift={(N00)}, fill=colorBlight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 1.2)
+		(-0.3, 0)
+		(2, -0.7)};
+	\draw[shift={(N00)}, color=colorB](0, -0.2) node [below right]{Descendance gauche};
+	\draw[shift={(N01)}, fill=colorClight]
+	plot [smooth, tension=1.5] coordinates {
+		(2, 0.7)
+		(-0.3, 0)
+		(2, -1.2)};
+	\draw[shift={(N01)}, color=colorC](0, -0.2) node [below right]{Descendance droite};
+	%on les retrace
+	\node[nodeN](N00) at (3.5, 2.7){};
+	\node[nodeN](N01) at (3.5, 1.2){};
+	%nomenclature
+	\draw(N)+(-0.2, 0.3) node [above]{Père de $n$};
+	\draw(N0)+(0, 0.2) node [above]{Noeud $n$};
+	\draw(N00)+(0, 0.2) node [above right]{Enfant gauche de $n$};
+	\draw(N01)+(0, 0.2) node [above right]{Enfant droite de $n$};
+	%arrêtes
+	\draw(N) -- (N0);
+	\draw[dashed](N) to (N1);
+	\draw(N0) -- (N00);
+	\draw(N0) -- (N01);
+	\foreach \i in{0, 1}{
+		\draw[dashed](N\i) to ++(15:0.8);
+		\draw[dashed](N\i) to ++(-15:0.8);
+	}
+	\draw[dashed](N) to ++(0: -1);
+\end{tikzpicture}
+
+[DEBUG  ][run           ] Ending   show_result          in 0.0   s.
+[DEBUG  ][run           ] Skipping save
+[DEBUG  ][run           ] Ending   save                 in 0.0   s.
+[DEBUG  ][beautifier_CLI] End at Mon May 24 18:40:27 2021s
