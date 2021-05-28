@@ -1,5 +1,4 @@
 from collections import deque       #BFS iterator
-import argparse                     #command line argument
 import csv                          #read color data
 import os.path                      #open files to convert
 import os                           #find cwd
