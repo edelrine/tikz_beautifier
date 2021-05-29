@@ -2,84 +2,87 @@ from utils import *
 from collections import deque
 
 def stripped(token):
-    """return a striped token
-    
-    >>> stripped(" test ")
+    '''
+    return a striped token
+
+    >>> stripped(' test ')
     'test'
-    >>> stripped([" test "])
+    >>> stripped([' test '])
     [' test ']
-    """
-    if isinstance(token, str) and token != "\n":
+    '''
+    if isinstance(token, str) and token != '\n':
         return token.strip()
-    return token 
+    return token
 
 def get_path(index):
-    """return path to element to run in exec function
-    
+    '''
+    return path to element to run in exec function
+
     >>> get_path([0,1])
     '[0][1]'
     >>> array = [['a','b'], ['c', 'd']]
-    """
-    return "".join([f"[{i}]" for i in index])
+    '''
+    return ''.join([f'[{i}]' for i in index])
 
 def space_beetwen(last, new):
-    """return True if the two token need to be separete with espace"""
-    OPEN = ("(","[","{")
-    CLOSE= (")","]","}")
+    '''
+    return True if the two token need to be separete with espace'''
+    OPEN = ('(', '[', '{')
+    CLOSE = (')', ']', '}')
 
-    if last==None:return False
+    if last is None: return False
 
-    if True in (#without space
-        #opened brackets before
-        last.endswith((
-            *OPEN,
-            "\\",
-            "="
-        )),
-        #closing bracket after
-        new.startswith((
-            *CLOSE,
-            "="
-        )),
-        #no space beetwen command and parameters
-        last.startswith("\\") and new.startswith(OPEN)
-        ):
+    if True in (  # without space
+            # opened brackets before
+            last.endswith((
+                    *OPEN,
+                    '\\',
+                    '='
+            )),
+            # closing bracket after
+            new.startswith((
+                    *CLOSE,
+                    '='
+            )),
+            # no space beetwen command and parameters
+            last.startswith('\\') and new.startswith(OPEN)
+    ):
         return False
 
-    if True in (#with espace
-        #end with comma or --
-        last.endswith((
-            "--",
-            ",",
-            "."
-        )),
-        #begin with --
-        new.startswith("--"),
-        #space beetwen text and brackets
-        (new[0:1].isalpha()  and last.endswith(CLOSE)),
-        (last[-1:].isalpha() and new.startswith(OPEN))
-        ):
+    if True in (  # with espace
+            # end with comma or --
+            last.endswith((
+                    '--',
+                    ',',
+                    '.'
+            )),
+            # begin with --
+            new.startswith('--'),
+            # space beetwen text and brackets
+            (new[0:1].isalpha() and last.endswith(CLOSE)),
+            (last[-1:].isalpha() and new.startswith(OPEN))
+    ):
         return True
 
-    #default
+    # default
     return False
-
 
 class MultiDimensionalArray(list):
     def __init__(self, data):
-        """Set a MultiDimensionalArray
+        '''
+        Set a MultiDimensionalArray
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> mda
         [1, [2, 3, [4], [5]]]
         >>> mda[1]
         [2, 3, [4], [5]]
-        """
-        
+        '''
         list.__init__(self, data)
 
-    def to_string(self, tabulation="    ", expend=False, strip=True):
-        """return indented string of the MultiDimensionalArray
+    def to_string(self, tabulation='    ', expend=False, strip=True):
+        '''
+        return indented string of the MultiDimensionalArray
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> mda.to_string(strip=False)
@@ -91,42 +94,41 @@ class MultiDimensionalArray(list):
             3
                 4
                 5
-        """
+        '''
         back_to_line = True
-        previous_token=None
+        previous_token = None
 
         def branch(branch_data, deep=0):
             nonlocal back_to_line, expend, previous_token
-            text = ""
+            text = ''
             for token in branch_data:
                 if isinstance(token, list):
                     text += branch(token, deep=deep + 1)
 
-                    #remove empty line of the child
-                    if text.split("\n")[-1:] and text.split("\n")[-1].rstrip() == "":
-                        text = text.rstrip() + "\n"
+                    # remove empty line of the child
+                    if text.split('\n')[-1:] and text.split('\n')[-1].rstrip() == '':
+                        text = text.rstrip() + '\n'
                         back_to_line = True
                     continue
 
                 token = str(token)
-                if strip : token = stripped(token)
+                if strip: token = stripped(token)
 
                 if back_to_line:
                     text += tabulation * deep
                     back_to_line = False
                     token = token.lstrip()
 
-
                 if previous_token != None and \
-                    (not strip or (strip and space_beetwen(previous_token, token))):
-                    text += " "
+                        (not strip or (strip and space_beetwen(previous_token, token))):
+                    text += ' '
 
                 text += token
 
-                if expend or token == "\n":
+                if expend or token == '\n':
                     text = text.rstrip()
                     back_to_line = True
-                    text += "\n"
+                    text += '\n'
 
                 previous_token = token
             return text
@@ -134,7 +136,8 @@ class MultiDimensionalArray(list):
         return branch(self).rstrip()
 
     def get_element(self, index):
-        """return the element poited by the index
+        '''
+        return the element poited by the index
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> mda.get_element([])
@@ -142,36 +145,35 @@ class MultiDimensionalArray(list):
         >>> mda.get_element([1,2])
         [4]
         >>> node = mda.get_element([1,3])
-        >>> node.append(6)
+        >>> node.append(6,)
         >>> mda
         [1, [2, 3, [4], [5, 6]]]
-        """
-        assert isinstance(index, list) \
-            or isinstance(index, Pointer) \
-            or isinstance(index, tuple), \
-            "index must be a list, tuple or Pointer"
+        '''
+        assert isinstance(index, (list, Pointer, tuple)), 'index must be a list, tuple or Pointer'
 
-        return eval("self" + get_path(index))
+        return eval('self' + get_path(index))
 
     def set_element(self, index, element):
-        """set a new element at the index position
+        '''
+        set a new element at the index position
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> mda.set_element([1,2], 42)
         >>> mda
         [1, [2, 3, 42, [5]]]
-        """
+        '''
         node = self.get_element(index[:-1])
         node[index[-1]: index[-1] + 1] = [element]
 
     def DFS(self, on_node=True, on_leaf=True, max_deep=-1):
-        """make a deep first search on the mda
+        '''
+        make a deep first search on the mda
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> [index for token, index in mda.iter_data(DFS=True)]
         [[0], [1], [1, 0], [1, 1], [1, 2], [1, 2, 0], [1, 3], [1, 3, 0]]
         >>> [token for token, index in mda.iter_data(DFS=True)]
         [1, [2, 3, [4], [5]], 2, 3, [4], 4, [5], 5]
-        """
+        '''
         stack_index = [[position] for position in range(len(self))][::-1]
         stack_token = [node for node in self][::-1]
 
@@ -195,7 +197,8 @@ class MultiDimensionalArray(list):
                     stack_index.append(index + [position])
 
     def BFS(self, on_node=True, on_leaf=True, max_deep=-1):
-        """make a breadth first search on the mda
+        '''
+        make a breadth first search on the mda
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> [token for token, index in mda.iter_data()]
@@ -204,7 +207,7 @@ class MultiDimensionalArray(list):
         [[0], [1], [1, 0], [1, 1], [1, 2], [1, 3], [1, 2, 0], [1, 3, 0]]
         >>> [token for token, index in mda.iter_data(on_node=False)]
         [1, 2, 3, 4, 5]
-        """
+        '''
         fifo_index = deque([[position] for position in range(len(self))])
         fifo_token = deque([node for node in self])
 
@@ -228,7 +231,8 @@ class MultiDimensionalArray(list):
                     fifo_index.append(index + [position])
 
     def iter_data(self, on_node=True, on_leaf=True, index_start=[0], max_deep=-1, DFS=False):
-        """make a BFS on the MultiDimensionalArray and return [element, index] at each node
+        '''
+        make a BFS on the MultiDimensionalArray and return [element, index] at each node
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> [token for token, index in mda.iter_data()]
@@ -242,11 +246,11 @@ class MultiDimensionalArray(list):
         >>> [token for token, index in mda.iter_data(DFS=True)]
         [1, [2, 3, [4], [5]], 2, 3, [4], 4, [5], 5]
 
-        """
-        assert isinstance(on_node, bool), "on_node must be a bool"
-        assert isinstance(on_leaf, bool), "on_leaf must be a bool"
-        assert isinstance(index_start, list), "index_start must be a list"
-        assert isinstance(max_deep, int), "max_deep must be a int"
+        '''
+        assert isinstance(on_node, bool), 'on_node must be a bool'
+        assert isinstance(on_leaf, bool), 'on_leaf must be a bool'
+        assert isinstance(index_start, list), 'index_start must be a list'
+        assert isinstance(max_deep, int), 'max_deep must be a int'
 
         mda = []  # rebuild mda from index_start
         branch = self.get_element(index_start[:-1])
@@ -265,19 +269,20 @@ class MultiDimensionalArray(list):
                 yield [token, Pointer(self, index=index_start[:-1] + index)]
 
     def filter(self, fct_check, max_element=-1, strip=True, **args_iter):
-        """selection a total of max_element when fct_check return true, fct_check is call with in parameter the
+        '''
+        selection a total of max_element when fct_check return true, fct_check is call with in parameter the
         element and his index
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> fct_check = lambda element, index: (isinstance(element, int) and element%2 == 0)
         >>> [mda.get_element(index) for index in mda.filter(fct_check)]
         [2, 4]
-        """
-        assert isinstance(max_element, int), "max_element must be a int"
-        assert callable(fct_check), "fct_check need to be callable"
+        '''
+        assert isinstance(max_element, int), 'max_element must be a int'
+        assert callable(fct_check), 'fct_check need to be callable'
         selection = []
         for element, index in self.iter_data(**args_iter):
-            if strip: 
+            if strip:
                 element = stripped(element)
             if fct_check(element, index):
                 selection.append(Pointer(self, index=index))
@@ -286,42 +291,47 @@ class MultiDimensionalArray(list):
         return selection
 
     def search(self, value, **args):
-        """return all index who match with the value
+        '''
+        return all index who match with the value
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> mda.search(2)
         [[1, 0]]
         >>> mda.get_element([1, 0])
         2
-        """
+        '''
         return self.filter(lambda element, index: element == value, **args)
 
     def search_regex(self, pattern, **args):
-        """return all index who match with the value
-        
+        '''
+        return all index who match with the value
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
-        >>> odd_number = r"^\d*[13579]$"
+        >>> odd_number = r'^\d*[13579]$'
         >>> [mda.get_element(index) for index in mda.search_regex(odd_number)]
         [1, 3, 5]
-        """
-        assert isinstance(pattern, str), "pattern need to ba a string"
-        return self.filter(lambda element, index: re.search(pattern, str(element)), on_node=False, **args)
-
-        
+        '''
+        assert isinstance(pattern, str), 'pattern need to ba a string'
+        return self.filter(
+            lambda element, index: re.search(pattern, str(element)), 
+            on_node=False, 
+            **args
+        )
 
     def append(self, index, element, extend=False):
-        """append a new element at the index node index
-    
+        '''
+        append a new element at the index node index
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> mda.append([1,3],6)
         >>> mda
         [1, [2, 3, [4], [5, 6]]]
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
-        >>> mda.append([1,3,0],6)        
+        >>> mda.append([1,3,0],6)
         >>> mda
         [1, [2, 3, [4], [5, 6]]]
-        """
+        '''
         if not isinstance(self.get_element(index), list):
             index.pop()
         node = self.get_element(index)
@@ -330,45 +340,47 @@ class MultiDimensionalArray(list):
         node[::] = [t for t in node] + element
 
     def remove(self, index):
-        """append a new element at the index node index
-    
+        '''
+        append a new element at the index node index
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> mda.remove([1,3])
         >>> mda
         [1, [2, 3, [4]]]
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
-        >>> mda.remove([1])        
+        >>> mda.remove([1])
         >>> mda
         [1]
-        """
+        '''
         node = self.get_element(index[:-1])
         del node[index[-1]]
 
     def insert(self, index, element, extend=False):
-        """insert element at the left of index
+        '''
+        insert element at the left of index
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> mda.insert([0],0)
         >>> mda
         [0, 1, [2, 3, [4], [5]]]
-        """
+        '''
         node = self.get_element(index[:-1])
         position = index[-1]
         if not extend:
             element = [element]
         node[position:position] = element
 
-
 class Pointer(list):
     def __init__(self, mda, index=[0]):
-        """Set a pointer on a MultiDimensionalArray class
-       
+        '''
+        Set a pointer on a MultiDimensionalArray class
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda)
         >>> p
         [0]
-        """
+        '''
         # super(Pointer, self).__init__(index) ?
         self.mda = mda
         if mda == []:
@@ -376,20 +388,22 @@ class Pointer(list):
         list.__init__(self, index)
 
     def get_index(self):
-        """return the index of the pointer
-        
+        '''
+        return the index of the pointer
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda)
         >>> p
         [0]
         >>> p.get_index()
         [0]
-        """
+        '''
         return self
 
     def set_index(self, index):
-        """set a new index
-       
+        '''
+        set a new index
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda)
         >>> p
@@ -397,12 +411,13 @@ class Pointer(list):
         >>> p.set_index([0,2,0])
         >>> p
         [0, 2, 0]
-        """
+        '''
         self[::] = index
 
     def get_element(self, strip=True):
-        """returns the pointed item
-        
+        '''
+        returns the pointed item
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda)
         >>> p.get_element()
@@ -410,15 +425,16 @@ class Pointer(list):
         >>> p.go_to(1)
         >>> p.get_element()
         [2, 3, [4], [5]]
-        """
+        '''
         element = self.mda.get_element(self)
-        if isinstance(element, str) :
+        if isinstance(element, str):
             return element.strip() if strip else element
         return element
 
     def set_element(self, element):
-        """set a element at the index position
-        
+        '''
+        set a element at the index position
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda, index=[1,2])
         >>> p.set_element(42)
@@ -427,12 +443,13 @@ class Pointer(list):
         >>> mda
         [1, [2, 3, 42, [5]]]
 
-        """
+        '''
         self.mda.set_element(self, element)
 
     def go_to(self, position):
-        """go on a certain position
-        
+        '''
+        go on a certain position
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda)
         >>> p
@@ -440,25 +457,27 @@ class Pointer(list):
         >>> p.go_to(1)
         >>> p
         [1]
-        """
-        assert isinstance(position, int), "position must be a int"
-        assert position >= 0, "index must be positive"
+        '''
+        assert isinstance(position, int), 'position must be a int'
+        assert position >= 0, 'index must be positive'
         # self[-1] = self.merge_index(position)
         self[-1] = position
 
     def get_position(self):
-        """return the last index
-        
+        '''
+        return the last index
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda, index=[0,3])
         >>> p.get_position()
         3
-        """
+        '''
         return self[-1] if self != [] else 0
 
     def get_parent(self):
-        """return the parent element of the pointed item
-        
+        '''
+        return the parent element of the pointed item
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda)
         >>> p.get_element()
@@ -471,11 +490,12 @@ class Pointer(list):
         [5]
         >>> p.get_parent()
         [2, 3, [4], [5]]
-        """
+        '''
         return self.mda.get_element(self[:-1])
 
     def merge_index(self, i, loop=True):
-        """return the nearest correct index
+        '''
+        return the nearest correct index
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda)
         >>> p.merge_index(99)
@@ -485,9 +505,9 @@ class Pointer(list):
         4
         >>> p.merge_index(-99)
         0
-        """
+        '''
         if i < 0:
-            if i < - len(self.get_parent()) or loop == False:
+            if i < - len(self.get_parent()) or loop is False:
                 return 0
             else:
                 return len(self.get_parent()) + i + 1
@@ -496,8 +516,9 @@ class Pointer(list):
         return i
 
     def move(self, step):
-        """move the cursor of step position
-        
+        '''
+        move the cursor of step position
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda, index=[1,0])
         >>> p.move(2)
@@ -507,8 +528,8 @@ class Pointer(list):
         >>> p.move(-9)
         >>> p
         [1, 0]
-        """
-        assert isinstance(step, int), "step must be a int"
+        '''
+        assert isinstance(step, int), 'step must be a int'
         self[-1:] = [self.merge_index(self.get_position() + step, loop=False)]
 
     def go_next(self):
@@ -518,39 +539,42 @@ class Pointer(list):
         self.move(-1)
 
     def go_down(self):
-        """go down a node
-        
+        '''
+        go down a node
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda, index=[1])
         >>> p.go_down()
         >>> p
         [1, 0]
-        """
-        assert isinstance(self.get_element(), list), "element need to be node to go deeper"
+        '''
+        assert isinstance(self.get_element(), list), 'element need to be node to go deeper'
         self += [0]
 
     def go_up(self):
-        """go up a node
-        
+        '''
+        go up a node
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda, index=[1,0])
         >>> p.go_up()
         >>> p
         [1]
-        """
-        assert self != [], "can go up at root"
+        '''
+        assert self != [], 'can go up at root'
         self.pop()
 
     def move_until(self, function, step=1):
-        """move the pointer until the function return True"""
+        '''move the pointer until the function return True'''
         last_position = self.get_position()
         self.move(step)
-        while last_position != self.get_position() and function(self.get_element(), self) == False:
+        while last_position != self.get_position() and function(self.get_element(), self) is False:
             last_position = self.get_position()
             self.move(step)
 
     def next_node(self):
-        """go next node
+        '''
+        go next node
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda, index=[1,0])
@@ -559,34 +583,36 @@ class Pointer(list):
         [1, 2]
         >>> p.get_element()
         [4]
-        """
+        '''
         return self.move_until(lambda token, index: isinstance(token, list))
 
     def previous_node(self):
-        """go to the previous node"""
+        '''go to the previous node'''
         return self.move_until(lambda token, index: isinstance(token, list), step=-1)
 
     def find_next(self, element):
-        """move pointer to the next occurence
+        '''
+        move pointer to the next occurence
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda, index=[1,0])
         >>> p.find_next([4])
         >>> p
         [1, 2]
-        """
+        '''
         self.move_until(lambda token, index: token == element)
 
     def append(self, element, extend=False):
-        """append a new element at the index of the pointer
-    
+        '''
+        append a new element at the index of the pointer
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda, index=[1,3])
-        >>> p.append(6)
+        >>> p.append(6,)
         >>> mda
         [1, [2, 3, [4], [5], 6]]
         >>> p.get_parent()
         [2, 3, [4], [5], 6]
-        """
+        '''
         remember_position = self.get_position()
         self.go_up()
         self.mda.append(self, element, extend=extend)
@@ -594,35 +620,38 @@ class Pointer(list):
         self.go_to(remember_position)
 
     def remove(self):
-        """append a new element at the index node index
-    
+        '''
+        append a new element at the index node index
+
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda, index=[1,3])
         >>> p.remove()
         >>> mda
         [1, [2, 3, [4]]]
-        """
+        '''
         self.mda.remove(self)
 
     def insert(self, element, extend=False):
-        """insert element at the left of index
+        '''
+        insert element at the left of index
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4],[5]]])
         >>> p = Pointer(mda)
         >>> p.insert(0)
         >>> mda
         [0, 1, [2, 3, [4], [5]]]
-        """
+        '''
         self.mda.insert(self, element, extend=extend)
 
     def is_coordinate(self):
-        """check is pointed element is a couple (x, ",", y)
+        '''
+        check is pointed element is a couple (x, ',', y)
 
         >>> mda = MultiDimensionalArray([1,[2,3,[4, 5]]])
         >>> p = Pointer(mda, index=[1,2])
         >>> p.is_coordinate()
         True
-        """
+        '''
         node = self.get_element()
         if not isinstance(node, list):
             return False
@@ -640,8 +669,8 @@ class Pointer(list):
     def previous_coordinate(self):
         self.move_until(lambda token, index: index.is_coordinate(), step=-1)
 
-
 if __name__ == '__main__':
     import doctest
+
     doctest.testmod()
-    #doctest.run_docstring_examples(MultiDimensionalArray.iter_data, globals())
+    # doctest.run_docstring_examples(MultiDimensionalArray.iter_data, globals())

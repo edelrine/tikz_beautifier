@@ -13,7 +13,7 @@ def gap(a,b) :
 def is_float(token) :
     """check if the token can be convert in float"""
     try :
-        f = float(token)
+        _ = float(token)
         return True
     except :
         return False
@@ -31,8 +31,8 @@ def get_color_name(data_colors,red,green,blue) :
     minn_name = "no name"
     for name, (r,g,b) in data_colors.items() :
         score = (
-            gap(red,r)**2 + 
-            gap(green,g)**2 + 
+            gap(red,r)**2 +
+            gap(green,g)**2 +
             gap(blue,b)**2
         )
 
