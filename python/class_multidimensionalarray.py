@@ -1,5 +1,7 @@
+import re
 from utils import *
 from collections import deque
+
 
 def stripped(token):
     '''
@@ -14,6 +16,7 @@ def stripped(token):
         return token.strip()
     return token
 
+
 def get_path(index):
     '''
     return path to element to run in exec function
@@ -24,25 +27,27 @@ def get_path(index):
     '''
     return ''.join([f'[{i}]' for i in index])
 
+
 def space_beetwen(last, new):
     '''
     return True if the two token need to be separete with espace'''
     OPEN = ('(', '[', '{')
     CLOSE = (')', ']', '}')
 
-    if last is None: return False
+    if last is None:
+        return False
 
     if True in (  # without space
             # opened brackets before
             last.endswith((
-                    *OPEN,
-                    '\\',
-                    '='
+                *OPEN,
+                '\\',
+                '='
             )),
             # closing bracket after
             new.startswith((
-                    *CLOSE,
-                    '='
+                *CLOSE,
+                '='
             )),
             # no space beetwen command and parameters
             last.startswith('\\') and new.startswith(OPEN)
@@ -52,9 +57,9 @@ def space_beetwen(last, new):
     if True in (  # with espace
             # end with comma or --
             last.endswith((
-                    '--',
-                    ',',
-                    '.'
+                '--',
+                ',',
+                '.'
             )),
             # begin with --
             new.startswith('--'),
@@ -66,6 +71,7 @@ def space_beetwen(last, new):
 
     # default
     return False
+
 
 class MultiDimensionalArray(list):
     def __init__(self, data):
@@ -112,7 +118,8 @@ class MultiDimensionalArray(list):
                     continue
 
                 token = str(token)
-                if strip: token = stripped(token)
+                if strip:
+                    token = stripped(token)
 
                 if back_to_line:
                     text += tabulation * deep
@@ -149,7 +156,8 @@ class MultiDimensionalArray(list):
         >>> mda
         [1, [2, 3, [4], [5, 6]]]
         '''
-        assert isinstance(index, (list, Pointer, tuple)), 'index must be a list, tuple or Pointer'
+        assert isinstance(index, (list, Pointer, tuple)
+                          ), 'index must be a list, tuple or Pointer'
 
         return eval('self' + get_path(index))
 
@@ -287,7 +295,7 @@ class MultiDimensionalArray(list):
             if fct_check(element, index):
                 selection.append(Pointer(self, index=index))
                 if len(selection) == max_element:
-                    break;
+                    break
         return selection
 
     def search(self, value, **args):
@@ -313,8 +321,8 @@ class MultiDimensionalArray(list):
         '''
         assert isinstance(pattern, str), 'pattern need to ba a string'
         return self.filter(
-            lambda element, index: re.search(pattern, str(element)), 
-            on_node=False, 
+            lambda element, index: re.search(pattern, str(element)),
+            on_node=False,
             **args
         )
 
@@ -370,6 +378,7 @@ class MultiDimensionalArray(list):
         if not extend:
             element = [element]
         node[position:position] = element
+
 
 class Pointer(list):
     def __init__(self, mda, index=[0]):
@@ -548,7 +557,8 @@ class Pointer(list):
         >>> p
         [1, 0]
         '''
-        assert isinstance(self.get_element(), list), 'element need to be node to go deeper'
+        assert isinstance(self.get_element(),
+                          list), 'element need to be node to go deeper'
         self += [0]
 
     def go_up(self):
@@ -668,6 +678,7 @@ class Pointer(list):
 
     def previous_coordinate(self):
         self.move_until(lambda token, index: index.is_coordinate(), step=-1)
+
 
 if __name__ == '__main__':
     import doctest
